@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>دليل الرضاعة التفاعلي</title>
+<meta name="description" content="دليل رضاعة تفاعلي للأم الجديدة باللهجة الكويتية: من أول قطرة لبأ لين بعد الأسبوعين.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* VOICE: warm big-sister talk, Kuwaiti humour, sarcasm only at the "عطوه بطل" crowd, never at mothers
-   IDEA: a level-by-level course like a baby's first passport, ending in a stamped expert certificate
-   PICTURE: three milk drops (golden colostrum, creamy, bluish mature) + a live day-by-day explorer
+   IDEA: a story told in the order the first two weeks happen, level by level, ending in a stamped certificate
+   PICTURE: three milk drops up top, then real latch photos in a step-by-step stepper and a day-by-day explorer
    COLOUR and TYPE: rose field, deep plum ink, colostrum gold accent; Baloo Bhaijaan 2 + IBM Plex Sans Arabic
    LAYOUT: one column, 720px max, sticky progress, cards and taps, stacks naturally on phones */
 :root{color-scheme:light dark;
@@ -27,6 +28,7 @@ h1{font-size:clamp(32px,8vw,50px);font-weight:800}
 h2{font-size:clamp(26px,6vw,34px);font-weight:800}
 h3{font-size:19px;font-weight:600}
 p{margin:.4em 0 .8em}
+a{color:inherit}
 .wrap{max-width:720px;margin:0 auto;padding:0 18px}
 .top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:12px;padding-block:10px}
@@ -57,17 +59,14 @@ section{padding:34px 0 10px;border-bottom:1px dashed var(--line)}
 .flip[aria-expanded=true] .ans{display:block}
 .flip[aria-expanded=true]{border-color:var(--gold)}
 .box{border-radius:16px;padding:14px 16px;margin:14px 0}
-.box.gold{background:var(--goldbg)}
-.box.ok{background:var(--okbg)}
-.box.bad{background:var(--badbg)}
-.box.pink{background:var(--field)}
+.box.gold{background:var(--goldbg)}.box.ok{background:var(--okbg)}.box.bad{background:var(--badbg)}.box.pink{background:var(--field)}
 .box h3{margin-bottom:.2em}
-ul.l{padding-inline-start:20px;margin:.4em 0}ul.l li{margin:.35em 0}
-.joke{font-style:normal;color:var(--soft);font-size:15px;border-inline-start:3px solid var(--gold);padding-inline-start:10px;margin:10px 0}
+ul.l,ol.l{padding-inline-start:20px;margin:.4em 0}.l li{margin:.35em 0}
+.joke{color:var(--soft);font-size:15px;border-inline-start:3px solid var(--gold);padding-inline-start:10px;margin:10px 0}
 .days{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 button.chip{font:600 15px "IBM Plex Sans Arabic";color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:12px;min-height:44px;padding:6px 14px;cursor:pointer}
 button.chip[aria-pressed=true]{background:var(--plum);color:var(--bg);border-color:var(--plum)}
-.daycard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.daycard,.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
 .big{font:800 clamp(34px,10vw,52px)/1 "Baloo Bhaijaan 2",sans-serif;white-space:nowrap}
 .big small{font-size:18px;font-weight:600}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
@@ -76,13 +75,10 @@ button.chip[aria-pressed=true]{background:var(--plum);color:var(--bg);border-col
 .diapers{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
 .diapers i{width:18px;height:14px;border-radius:3px 3px 8px 8px;background:var(--gold)}
 .ladder{display:grid;gap:8px;margin:12px 0}
-.ladder div{border-radius:14px;padding:10px 14px}
-.ladder b{display:block}
-.check label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:6px 0;cursor:pointer;min-height:44px}
-.check input{width:22px;height:22px;flex:none;margin-top:3px;accent-color:var(--gold)}
+.ladder .box{margin:0}.ladder b{display:block}
 .calc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0}
 .calc label{display:block;font-weight:600;font-size:15px;margin:8px 0 4px}
-.calc input{width:100%;font:16px "IBM Plex Sans Arabic";padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);min-height:44px}
+.calc input,.txt{width:100%;font:16px "IBM Plex Sans Arabic";padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);min-height:44px}
 .res{margin-top:12px;padding:12px;border-radius:12px;background:var(--bg);font-size:15.5px}
 .mini{background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:16px;margin:18px 0}
 .mini .q{font-weight:600;margin-bottom:8px}
@@ -93,6 +89,27 @@ button.chip[aria-pressed=true]{background:var(--plum);color:var(--bg);border-col
 .opts button:disabled{cursor:default}
 .fb{margin-top:10px;font-size:15px}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+figure{margin:12px 0}
+figure img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:#000;border-radius:14px}
+figcaption{font-size:13.5px;color:var(--soft);margin-top:6px;line-height:1.5}
+.step{display:none}.step.on{display:block}
+.stepnav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+.dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:9px;background:var(--line)}.dots i.on{background:var(--gold);width:22px}
+.navb{font:600 15px "IBM Plex Sans Arabic";min-height:44px;padding:8px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.navb:disabled{opacity:.4;cursor:default}
+.navb.go{background:var(--plum);color:var(--bg);border-color:var(--plum)}
+.pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pic{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px}
+.pic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block}
+.pic .btns{display:flex;gap:6px;margin-top:8px}
+.pic .btns button{flex:1;font:600 14px "IBM Plex Sans Arabic";min-height:44px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.pic .ex{font-size:13.5px;margin-top:6px;color:var(--soft);line-height:1.5}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.vids{display:grid;gap:8px;margin:12px 0}
+.vid{display:flex;gap:12px;align-items:center;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;min-height:56px}
+.vid svg{flex:none;width:34px;height:34px}
+.vid b{display:block;font-size:15px;line-height:1.35}
+.vid small{display:block;font-size:13.5px;color:var(--soft);line-height:1.45}
 .myth{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:10px 0}
 .myth .s{font-weight:600;font-size:17px}
 .myth .btns{display:flex;gap:8px;margin-top:10px}
@@ -110,179 +127,302 @@ th{font-size:14px;color:var(--soft)}
 .primary{font:600 16px "IBM Plex Sans Arabic";background:var(--plum);color:var(--bg);border:0;border-radius:14px;min-height:48px;padding:10px 20px;cursor:pointer;margin-top:8px}
 .ghost{font:600 15px "IBM Plex Sans Arabic";background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:14px;min-height:44px;padding:8px 16px;cursor:pointer;margin-top:8px}
 footer{padding:28px 0 50px;font-size:14px;color:var(--soft)}
-.scroll{overflow-x:auto}
 @media(max-width:600px){table{font-size:13.5px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7.5em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7em;margin-inline-start:-7.5em;font-weight:600;color:var(--soft);white-space:normal}.stack td:empty{display:none}}
+@media(max-width:380px){.pics{grid-template-columns:minmax(0,1fr)}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
 <body>
-<div class="top"><div class="wrap"><div class="bar" aria-hidden="true"><i id="barFill"></i></div><b id="barTxt">0 من 9 مراحل</b></div></div>
+<div class="top"><div class="wrap"><div class="bar" aria-hidden="true"><i id="barFill"></i></div><b id="barTxt"></b></div></div>
 
 <header class="hero"><div class="wrap">
 <h1>دليل الرضاعة: من «يا ويلي ما عندي حليب» إلى خبيرة</h1>
-<p>تسع مراحل قصيرة، بكل مرحلة سؤال صغير. خلصيها وتطلعين تعرفين عن الرضاعة أكثر من نص الديوانية، وأكثر من العمة اللي من أول ساعة تقول «عطوه بطل يسكت».</p>
+<p>القصة بالترتيب اللي بتعيشينه: من أول قطرة لبأ، لأول مسكة، لين بعد الأسبوعين. 13 مرحلة قصيرة، بكل وحدة سؤال صغير. خلصيها وتطلعين تعرفين أكثر من نص الديوانية، وأكثر من العمة اللي من أول ساعة تقول «عطوه بطل يسكت».</p>
 <div class="drops" aria-label="مراحل لون الحليب">
-<div><svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 72 0C86 52 50 6 50 6Z" fill="#f2a900"/><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 36 36Z" fill="#e08a00" opacity=".45"/><ellipse cx="36" cy="70" rx="7" ry="13" fill="#fff" opacity=".55"/></svg><strong>اللبأ</strong><small>ذهبي وثقيل، من الحمل لين اليوم 2–4</small></div>
-<div><svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 72 0C86 52 50 6 50 6Z" fill="#f7e2b0"/><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 36 36Z" fill="#d9b66b" opacity=".4"/><ellipse cx="36" cy="70" rx="7" ry="13" fill="#fff" opacity=".7"/></svg><strong>الانتقالي</strong><small>من الأصفر لأبيض كريمي، يوم 3–5 لين 14</small></div>
-<div><svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 72 0C86 52 50 6 50 6Z" fill="#eef3fb"/><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 36 36Z" fill="#b8c8e6" opacity=".55"/><ellipse cx="36" cy="70" rx="7" ry="13" fill="#fff"/></svg><strong>الناضج</strong><small>خفيف مزرق أول الرضعة، أدسم آخرها</small></div>
+<div><svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 72 0C86 52 50 6 50 6Z" fill="#f2a900"/><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 36 36Z" fill="#e08a00" opacity=".45"/><ellipse cx="36" cy="70" rx="7" ry="13" fill="#fff" opacity=".55"/></svg><strong>اللبأ</strong><small>أصفر أو برتقالي ثقيل، من الحمل لين اليوم 2–4</small></div>
+<div><svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 72 0C86 52 50 6 50 6Z" fill="#f7e2b0"/><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 36 36Z" fill="#d9b66b" opacity=".4"/><ellipse cx="36" cy="70" rx="7" ry="13" fill="#fff" opacity=".7"/></svg><strong>الانتقالي</strong><small>من الأصفر للأبيض الكريمي، يوم 3–5 لين 14 تقريباً</small></div>
+<div><svg viewBox="0 0 100 120" aria-hidden="true"><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 72 0C86 52 50 6 50 6Z" fill="#eef3fb"/><path d="M50 6C50 6 14 52 14 78a36 36 0 0 0 36 36Z" fill="#b8c8e6" opacity=".55"/><ellipse cx="36" cy="70" rx="7" ry="13" fill="#fff"/></svg><strong>الناضج</strong><small>بعد الأسبوعين: خفيف يميل للأزرق أول الرضعة، أدسم آخرها</small></div>
 </div>
+<div class="box gold"><h3>الزبدة قبل لا نبدأ</h3><ul class="l">
+<li>قلة الحليب أول 2–3 أيام طبيعية. الياهل يرضع أول يوم 2–10 مل بالرضعة، والحليب الوايد ينزل بين اليوم 2 و4.</li>
+<li>رضعيه 8–12 مرة كل 24 ساعة، ليل ونهار، أول ما يبين عليه الجوع.</li>
+<li>المسكة العميقة أهم شي. إذا تعور، المسكة غلط.</li>
+<li>المقياس هو الحفاظات والوزن، مو القطرات ولا إحساسج بالثدي.</li>
+<li>الحليب الصناعي له أسباب طبية، وقلة اللبأ الطبيعية مو منها.</li>
+<li>الشفاط والمصاصة ما يحتاجهم أغلب اليهال أول الأسابيع.</li>
+</ul></div>
+<p class="joke" style="font-size:16px">وعلى الطريق بنمر على «المؤلفين»: اللي يطلعون نصايح من راسهم ويحلفون إن جدتهم سوتها وطلعوا كلهم زينين. احنا هني نمشي على الدراسات، مو على «وحدة قالت لأختي».</p>
 <p class="note"><b>تنبيه:</b> هالدليل للتثقيف بس، وما يغني عن دختور الأطفال أو أخصائية الرضاعة (IBCLC). كل ياهل له وضعه، وأي قرار بالحليب الصناعي يكون بعد ما يفحصونه ويوزنونه.</p>
 <nav class="toc" id="toc" aria-label="المراحل"></nav>
 </div></header>
 
 <main class="wrap">
 
-<section id="normal">
+<section id="milk">
 <span class="lv">المرحلة 1</span>
-<h2>لا تحاتين: هذا كله طبيعي</h2>
-<p class="lead">أكثر شي يخوف الأم الجديدة أشياء طبيعية مية بالمية. دوسي على كل كرت وشوفي ليش.</p>
-<div class="cards" id="normalCards"></div>
-<div class="mini" data-lv="normal"></div>
-</section>
-
-<section id="why">
-<span class="lv">المرحلة 2</span>
-<h2>ليش حليبج ذهب (حرفياً لونه ذهبي)</h2>
-<div class="box gold"><h3>اللبأ: أول تطعيم من عندج</h3><p>كميته قليلة بس مليان أجسام مضادة وبروتين، ويلين البطن عشان يطلع العقي. لا ينكب ولا يتبدل بماي أو سكر أو أعشاب.</p></div>
-<ul class="l">
-<li><b>الثدي مصنع يشتغل بالطلب:</b> ينتج على قد ما ينفضى. كل ما رضع الياهل أكثر، سوى الثدي أكثر.</li>
-<li><b>كل رضعة تفرق:</b> في دراسة صينية على 468 أم بعد القيصرية، كل رضعة زيادة أول 48 ساعة قللت احتمال تأخر نزول الحليب (نسبة الأرجحية 0.88 لكل رضعة).</li>
-<li><b>تساعد على الصفار:</b> الرضاعة 8–12 مرة تساعد الصفار يطلع مع البراز.</li>
-<li><b>الهدف (منظمة الصحة العالمية ووزارة الصحة السعودية):</b> بداية الرضاعة أول ساعة، ورضاعة طبيعية خالصة 6 شهور، وبعدين مع الأكل لين سنتين أو أكثر. وهذا يوافق قوله تعالى: «والوالدات يرضعن أولادهن حولين كاملين» (البقرة: 233).</li>
-</ul>
-<div class="box pink"><h3>من عندنا بالكويت</h3><p>في مسح على 1,484 أم، 98.1% بدوا الرضاعة، بس 26.5% كانوا على الحليب الصناعي بالكامل وقت الطلعة من المستشفى. يعني نبدأ أبطال ونطلع من المستشفى ومعانا علبة حليب وبطل وخالة تشرح لنا. والأمهات اللي حصلوا إرشاد من التمريض كانوا أكثر بـ 2.5 مرة إنهم يكملون. وفي قطر، «الإحساس إن الحليب ما يكفي» كان السبب الأول لترك الرضاعة (44%).</p></div>
-<div class="mini" data-lv="why"></div>
-</section>
-
-<section id="days">
-<span class="lv">المرحلة 3</span>
-<h2>يوم بيوم: كم ياكل هالصغنون؟</h2>
-<p class="lead">اختاري عمر الياهل بالأيام وشوفي الطبيعي. أرقام الأيام 1–4 من بروتوكول ABM رقم 3، والحفاظات بعد اليوم 4 من AAP، واليوم 5 وطالع تقريبية.</p>
+<h2>أول الأيام: شنو تتوقعين من الحليب</h2>
+<div class="box gold"><h3>اللبأ: أول تطعيم من عندج</h3><p>قليل بس مليان أجسام مضادة، ويطلع العقي. لا تبدلينه بماي أو سكر أو أعشاب. وإذا طلع وردي خفيف، يصير أحياناً من تشقق أو احتقان وما يمنع الرضاعة، وإذا استمر أكثر من يومين اسألي الدختور. والحليب الناضج الخفيف مو «حليب ضعيف».</p></div>
+<h3>كم يرضع يوم بيوم؟ اختاري عمره</h3>
+<p style="font-size:15px;color:var(--soft)">أرقام الأيام 1–4 من بروتوكول ABM رقم 3، والحفاظات من AAP. اليوم 5 وطالع تقريبي. الأرقام بين القوسين لياهل وزنه 2.8–3.3 كغ. الإدرار ممكن يتأخر شوي بعد القيصرية أو أول ولادة.</p>
 <div class="days" id="dayBtns" role="group" aria-label="عمر الياهل"></div>
 <div class="daycard" id="dayCard" aria-live="polite"></div>
-<p class="joke">معدته عند الولادة حوالي 20 مل (Acta Paediatrica 2013)، ومصممة لرضعات صغيرة ومتقاربة تقريباً كل ساعة. يعني لما أحد يقول «عطوه 60 مل يرتاح» أول يوم، ترى يبي يعبي غرشة بيبسي في فنجان قهوة.</p>
-<div class="mini" data-lv="days"></div>
+<div class="cards">
+<button class="flip" aria-expanded="false"><h3>ما يطلع إلا قطرات صفرا، تكفيه؟</h3><div class="ans">إي، أول يوم تكفيه. وإذا عصرتي وما طلع إلا قطرات، الياهل بمصه يطلع أكثر من يدج. ومن اليابان: الأمهات اللي يعصرون كل 3 ساعات طلع لهم 0.4 مل بس أول 3 ساعات، والكمية ارتفعت بعد حوالي 30 ساعة، وأبطأ عند البكريات.</div></button>
+<button class="flip" aria-expanded="false"><h3>2 مل بالرضعة (حوالي 20 مل باليوم)؟</h3><div class="ans">طبيعي باليوم الأول بس. إذا ظل جذي باليوم 3 أو 4، كلمي الدختور.</div></button>
+<button class="flip" aria-expanded="false"><h3>معدته قد شنو؟</h3><div class="ans">يرسمونها بحجم حبة الكرز، ومراجعة في Acta Paediatrica (2013) قدرتها بحوالي 20 مل. الزبدة: رضعات صغيرة ووايدة طبيعية. يعني اللي يقول «عطوه 60 مل يرتاح» أول يوم، ترى يبي يعبي غرشة بيبسي في فنجان قهوة.</div></button>
+</div>
+<div class="box pink"><h3>من عندنا بالخليج</h3><p>في الكويت (1,484 أم) 98.1% بدوا رضاعة، بس 26.5% طلعوا من المستشفى على الصناعي بالكامل. يعني نبدأ أبطال ونطلع ومعانا علبة حليب وبطل وخالة تشرح. واللي حصلوا إرشاد من التمريض كانوا أكثر بـ 2.5 مرة يكملون. وفي قطر «الإحساس إن الحليب ما يكفي» كان أول سبب لترك الرضاعة (44%).</p></div>
+<div class="mini" data-lv="milk"></div>
 </section>
 
-<section id="how">
-<span class="lv">المرحلة 4</span>
-<h2>الرضعة: كم مرة وشلون</h2>
-<div class="box gold"><h3>8–12 مرة على الأقل كل 24 ساعة</h3><p>يعني تقريباً كل 1.5–3 ساعات من بداية الرضعة لبداية اللي بعدها، بالليل والنهار. (إي نعم، حتى الساعة 3 الفجر.) مدة الرضعة غالباً 5–30 دقيقة، والياهل يترك الثدي بروحه.</p></div>
-<h3>علامات الجوع: لا تنطرين الصياح</h3>
+<section id="when">
+<span class="lv">المرحلة 2</span>
+<h2>متى يرضع؟ (جواب مختصر: وايد)</h2>
+<div class="box gold"><h3>8–12 مرة كل 24 ساعة على الأقل</h3><p>يعني كل 1.5–3 ساعات من بداية الرضعة لبداية اللي بعدها، حتى الساعة 3 الفجر. إي نعم، الساعة 3 الفجر.</p></div>
+<ul class="l">
+<li><b>لا تنطرين الصياح.</b> الصياح علامة جوع متأخرة، ووايد مواليد يرقدون رقدة طويلة أول 24–48 ساعة كأنهم راجعين من دوام.</li>
+<li><b>ليلة اليوم الثاني</b> غالباً يبي يرضع ورا بعض لساعات (Cluster feeding). هذا طبيعي ويحفز الإدرار. هذا الياهل قاعد يقدم «طلب توريد» للمصنع، مو يشتكي إن البضاعة ناقصة.</li>
+<li><b>إذا مرت 3 ساعات</b> من بداية الرضعة اللي قبل، قعديه ورضعيه، لين يرجع لوزن الولادة. بعدين امشي على طلبه.</li>
+</ul>
+<h3>علامات الجوع</h3>
 <div class="ladder">
-<div class="box ok" style="margin:0"><b>مبكرة (أحسن وقت)</b>يحرك عيونه تحت الجفن، يفتح ثمه، يطلع لسانه، يلف راسه يدور الثدي، يمص إيده.</div>
-<div class="box gold" style="margin:0"><b>متوسطة</b>يتململ، يتمغط، يكثر حركة، يحط إيده في ثمه بقوة.</div>
-<div class="box bad" style="margin:0"><b>متأخرة</b>صياح ووجه أحمر. هديه أول (جلد بجلد) وبعدين رضعيه، لأنه وهو يصيح يصعب عليه يمسك الثدي.</div>
+<div class="box ok"><b>مبكرة (أحسن وقت)</b>يحرك عيونه، يفتح ثمه، يطلع لسانه، يلف راسه يدور الثدي، يمص إيده.</div>
+<div class="box gold"><b>متوسطة</b>يتململ ويتمغط ويكثر حركة.</div>
+<div class="box bad"><b>متأخرة</b>صياح ووجه أحمر. هديه أول بحضن جلد بجلد، وبعدين رضعيه.</div>
 </div>
-<h3>المسكة الصح: شيكي عليها</h3>
-<div class="check" id="latch"></div>
-<p>شلون تقربينه: يدج على رقبته وكتوفه مو ورا راسه، خشمه مقابل الحلمة، انطريه لين يفتح حلجه واسع، وقربيه بسرعة وذقنه أول شي. ألم خفيف أول ثواني عادي، أما الألم المستمر أو الحلمة المفلطحة بعد الرضعة أو التشققات فمعناها مسكة سطحية: دخلي إصبعج الصغير بزاوية ثمه عشان يفك، وعيدي.</p>
+<p class="joke">والعمة اللي تقول «لا تعودينه على الصدر، بيدلع»: ياهل عمره يومين ما يعرف يدلع، يعرف يجوع بس.</p>
+<h3>فيديوهات أول ساعات بعد الولادة</h3>
+<div class="vids" data-v="when"></div>
+<div class="mini" data-lv="when"></div>
+</section>
+
+<section id="latch">
+<span class="lv">المرحلة 3</span>
+<h2>المسكة خطوة بخطوة</h2>
+<p class="lead">إذا مسك صح، الحليب يطلع زين والحلمة ما تتعور. هالخطوات تمشي عليها الأم، أو أي أحد يساعدها.</p>
+<figure><img src="img/helper.jpg" alt="رجل يساعد أم في المستشفى أول ما تحط مولودها على الثدي" loading="lazy"><figcaption><b>قبل لا تبدين:</b> ظهرج مسنود ومخدة في حضنج، والياهل خفيف بدون قماط، والأحسن جلد بجلد. اللي يساعد يقدر يرتب المخدة ويناول الياهل ويمسك الثدي من فوق. الصورة: David Goodman، ويكيميديا كومنز (CC BY 2.0).</figcaption></figure>
+<div class="panel" id="stepper" aria-live="polite"></div>
+<p class="joke">وإذا يعور وأحد قال «عادي تحملي، كلنا تعورنا»، هذا مو دليل علمي، هذي ذكريات حرب. العوار معناه المسكة غلط، نقطة.</p>
+<h3 style="margin-top:22px">تمرين: صح ولا غلط؟</h3>
+<p>شوفي كل صورة وقرري.</p>
+<div class="pics" id="pics"></div>
+<div class="box pink"><h3>إذا الهالة قاسية أو منفخة: الضغط العكسي</h3><p>من الاحتقان أو من المغذي وقت الولادة، الهالة تقسى والياهل يزلق عليها. هالحركة تلينها:</p><ol class="l">
+<li>حطي أطراف أصابعج حول قاعدة الحلمة على شكل دائرة.</li>
+<li>اضغطي لداخل صوب صدرج، ضغط ثابت بدون ألم، وعدي لين 50 (حوالي دقيقة).</li>
+<li>رضعيه على طول، لأن الليونة تقعد 5–10 دقايق بس.</li></ol>
+<p>ممكن تحتاجينها كل رضعة لمدة 2–4 أيام. لا تسوينها إذا فيه التهاب بالثدي أو خراج أو قنوات مسدودة.</p></div>
+<h3>أشكال الحلمة</h3>
+<p>شكل الحلمة وحجمها ما يأثرون على كمية الحليب، والياهل يمسك الحلمة والهالة مع بعض، فأغلب اليهال يرضعون مهما كان الشكل. والمسطحة والغائرة غالباً تطلع أكثر مع الرضاعة. (WIC، وزارة الزراعة الأمريكية)</p>
+<div class="tabs" id="nipTabs" role="group" aria-label="شكل الحلمة"></div>
+<div class="panel" id="nipCard" aria-live="polite"></div>
+<p style="font-size:14px;color:var(--soft)">رسم الأشكال الثلاثة موجود عند <a href="https://my.clevelandclinic.org/health/body/nipple" target="_blank" rel="noopener">Cleveland Clinic</a>.</p>
+<h3>فيديوهات المسكة</h3>
+<div class="vids" data-v="latch"></div>
+<div class="mini" data-lv="latch"></div>
+</section>
+
+<section id="pos">
+<span class="lv">المرحلة 4</span>
+<h2>الوضعيات اللي تناسب المولود</h2>
+<div class="box gold"><p style="margin:0">في كل وضعية: بطن لبطن، وراسه وجسمه على خط واحد، وخشمه مقابل الحلمة، وأنتِ مسنودة. لا تنحنين، قربيه هو.</p></div>
+<div class="tabs" id="posTabs" role="group" aria-label="الوضعية"></div>
+<div class="panel" id="posCard" aria-live="polite"></div>
+<p style="font-size:14px;color:var(--soft)">صور حقيقية لكل الوضعيات موجودة عند <a href="https://www.mayoclinic.org/healthy-lifestyle/infant-and-toddler-health/in-depth/breast-feeding/art-20546815" target="_blank" rel="noopener">Mayo Clinic</a> و<a href="https://health.clevelandclinic.org/breastfeeding-positions/" target="_blank" rel="noopener">Cleveland Clinic</a> (صورهم محفوظة الحقوق فما حطيناها هني).</p>
+<div class="box bad"><p style="margin:0"><b>وضعية القعدة (الكوالا)</b> للياهل الأكبر اللي يمسك راسه، مو للمولود. (Cleveland Clinic)</p></div>
+<p class="joke">والكوالا للمولود؟ المولود مو دب أسترالي. خليه بطن لبطن لين يكبر ويمسك راسه.</p>
+<div class="mini" data-lv="pos"></div>
+</section>
+
+<section id="feeding">
+<span class="lv">المرحلة 5</span>
+<h2>شلون أعرف إنه قاعد يرضع صج؟</h2>
+<ul class="l">
+<li><b>المص:</b> يبدي سريع، وبعدين يصير طويل وبطيء مع وقفات.</li>
+<li><b>البلع:</b> تسمعينه أو تشوفين حركة تحت أذنه وذقنه. يوضح عادة من اليوم 3–4.</li>
+<li><b>المدة:</b> غالباً 5–30 دقيقة، ويترك الثدي بروحه. (وزارة الصحة السعودية)</li>
+<li><b>الثدي:</b> يصير أخف بعد الرضعة.</li>
+<li><b>ما يعور:</b> إذا الحلمة تعور، المسكة غلط (المرحلة 3).</li>
+</ul>
 <div class="cards">
-<button class="flip" aria-expanded="false"><h3>نعسان وما يقعد للرضعة؟</h3><div class="ans">قعديه إذا مرت 3 ساعات من بداية الرضعة اللي قبل، لين يرجع لوزن الولادة. الطرق: جلد بجلد، فكي القماط، غيري الحفاظة، امسحي وجهه بخرقة مبللة، دغدغي باطن رجله، اعصري قطرات لبأ على شفايفه، اضغطي الثدي بشويش لما يوقف مص، أو بدلي للثدي الثاني.</div></button>
-<button class="flip" aria-expanded="false"><h3>شلون أعرف إنه شبع؟</h3><div class="ans">يترك الثدي بروحه أو يصير المص خفيف بدون بلع، إيدينه مفتوحة ومرتخية (الجوعان قبضته مسكرة)، جسمه رخو ووجهه هادي ووايد مرات يرقد، والثدي أخف وألين.</div></button>
-<button class="flip" aria-expanded="false"><h3>يمص مرتين ويوخر ويبكي، شسوي؟</h3><div class="ans">لا تدزين راسه. هديه أو طلعي غازاته أو جلد بجلد وجربي مرة ثانية أو الثدي الثاني. سرعي الحليب: اعصري قطرات على الحلمة قبل، واضغطي الثدي وهو يرضع لما يوقف بلع. ورضعيه أول ما يبين جوعه. إذا صار كل رضعة، أو الحفاظات قليلة، أو نعسان وايد أو مصفر، روحي لأخصائية الرضاعة.</div></button>
+<button class="flip" aria-expanded="false"><h3>يمص شوي ويرقد</h3><div class="ans">طبيعي أول 2–3 أيام، لأن اللبأ بطيء والمولود نعسان. المهم عدد الرضعات والحفاظات، مو طول كل رضعة. إذا رقد بعد دقايق من بلع واضح وترك الثدي مرتاح، هذي رضعة كاملة. عشان يصحى: جلد بجلد، فكي القماط، غيري الحفاظة، امسحي وجهه بخرقة مبللة، دغدغي رجله، اعصري قطرات على شفايفه، اضغطي الثدي لما يوقف بلع، أو بدلي للثدي الثاني. وإذا كل رضعة يرقد بعد 2–3 مصات بدون بلع والحفاظات قليلة، يبيله تقييم للمسكة واللسان والصفار.</div></button>
 </div>
-<div class="mini" data-lv="how"></div>
+<p class="joke">واللي يقول «شوفي ما يبلع، حليبج كله ماي» ما سمع بلع بحياته، بس سمع عن البطل.</p>
+<div class="vids" data-v="feeding"></div>
+<h3>يمص مرتين وبعدين يوخر ويبكي؟</h3>
+<table class="stack"><thead><tr><th>السبب</th><th>شلون تعرفينه</th><th>شنو تسوين</th></tr></thead><tbody>
+<tr><td>الحليب ما نزل للحين</td><td>يهدى بعد ما ينزل الحليب</td><td>اعصري قطرات قبل، واضغطي الثدي وهو يرضع</td></tr>
+<tr><td>تعود على السرنجة أو الببرونة</td><td>يعصب من بطء الثدي</td><td>المكمل على الثدي مو قبله (المرحلة 8)</td></tr>
+<tr><td>مسكة سطحية</td><td>الحلمة تعور أو تطلع مفلطحة</td><td>فكيه وعيدي المسكة</td></tr>
+<tr><td>دز راسه من ورا</td><td>يدفع راسه لورا</td><td>امسكيه من الكتوف</td></tr>
+<tr><td>غازات</td><td>يهدى بعد ما تطلعينها</td><td>طلعي الغازات وكملي</td></tr>
+<tr><td>جوعان وايد أو نعسان</td><td>صياح، أو مصتين وينام</td><td>رضعيه أول ما يجوع</td></tr>
+<tr><td>خشم مسدود، احتقان، عورة من الولادة، لسان مربوط</td><td>يصير على ثدي واحد أو كل رضعة</td><td>جربي وضعية ثانية، وروحي لأخصائية رضاعة</td></tr>
+</tbody></table>
+<p>إذا صار كل رضعة، أو الحفاظات أقل من الجدول، أو الياهل نعسان وايد أو مصفر، روحي لأخصائية رضاعة أو الدختور.</p>
+<div class="mini" data-lv="feeding"></div>
+</section>
+
+<section id="full">
+<span class="lv">المرحلة 6</span>
+<h2>شلون أعرف إنه شبع؟</h2>
+<ul class="l">
+<li>يترك الثدي بروحه، أو المص يصير خفيف بدون بلع.</li>
+<li>إيدينه مفتوحة ومرتخية (الجوعان قبضته مسكرة).</li>
+<li>جسمه رخو ووجهه هادي، ووايد مرات يرقد.</li>
+<li>الثدي أخف وألين.</li>
+</ul>
+<div class="cards"><button class="flip" aria-expanded="false"><h3>بعد الغازات رجع يمص!</h3><div class="ans">طبيعي. يا فضى مكان، يا يمص عشان يرتاح. خليه يرضع. وإذا يمص بدون بلع، تقدرين تهدينه بالحضن.</div></button></div>
+<p class="joke">«يمص إيده! يعني جوعان، عطوه بطل». يمص إيده لأنه ياهل اكتشف إن عنده إيد، مو لأنه مضرب عن الطعام.</p>
+<div class="mini" data-lv="full"></div>
 </section>
 
 <section id="enough">
-<span class="lv">المرحلة 5</span>
-<h2>مكتفي ولا لا؟ اسألي الحفاظة مو العمة</h2>
-<p class="lead">ما تقدرين تقيسين كم رضع من الثدي، فاعتمدي على هالعلامات مو على المليلترات ولا القطرات اللي تشوفينها ولا إحساسج بالثدي:</p>
+<span class="lv">المرحلة 7</span>
+<h2>مكتفي باليوم كله؟ اسألي الحفاظة مو العمة</h2>
+<p class="lead">الرضعة الوحدة مو مقياس. المقياس:</p>
 <ul class="l">
-<li><b>الرضعات:</b> 8–12 باليوم مع صوت بلع (يوضح عادة من اليوم 3–4).</li>
-<li><b>الحفاظات المبللة تزيد كل يوم:</b> وحدة باليوم الأول، ثنتين بالثاني، ثلاث بالثالث، أربع بالرابع، و6 أو أكثر من اليوم الخامس مع بول صافي.</li>
-<li><b>البراز:</b> من العقي الأسود لأصفر بحدود اليوم 4–5.</li>
+<li><b>الرضعات:</b> 8–12 مع صوت بلع.</li>
+<li><b>الحفاظات المبللة:</b> وحدة باليوم الأول، ثنتين بالثاني، ثلاث بالثالث، أربع بالرابع، و6 أو أكثر من الخامس مع بول صافي.</li>
+<li><b>البراز:</b> من الأسود للأصفر بحدود اليوم 4–5.</li>
 <li><b>الوزن:</b> ينزل أقل من 7–10%، ويرجع لوزن الولادة بحدود الأسبوعين (بالمعدل اليوم 8، وأغلبهم بين 7 و14).</li>
 </ul>
+<p>كل المواليد ينزل وزنهم، وأقل وزن باليوم 2–3، لأنهم يتخلصون من السوايل والعقي. المعدل عند اللي يرضعون زين 5.5–6.6% (ABM).</p>
 <div class="calc">
 <h3>حاسبة نزول الوزن</h3>
 <label for="bw">وزن الولادة (كيلو)</label><input id="bw" type="number" inputmode="decimal" step="0.01" min="1" max="6" placeholder="مثلاً 2.8">
 <label for="cw">وزنه الحين (كيلو، اختياري)</label><input id="cw" type="number" inputmode="decimal" step="0.01" min="1" max="6" placeholder="مثلاً 2.65">
 <div class="res" id="wres">اكتبي وزن الولادة ونطلع لج حد 7% وحد 10%.</div>
 </div>
-<p class="joke">القيصرية والمغذي وقت الولادة ممكن ينفخون وزن الولادة شوي، فيبين النزول أكبر من حقيقته. وفي اليابان (399 مولود) كان معدل النزول 9.4%، والبكرية والقيصرية قبل الطلق تحتاج متابعة أدق باليوم 2–4. اطلبي يوزنونه بزيارة اليوم 3–5.</p>
+<p class="joke">القيصرية والمغذي ممكن ينفخون وزن الولادة، فيبين النزول أكبر، والدكاترة يستخدمون أداة NEWT عشان يفرقون. ومن اليابان (399 مولود): معدل النزول 9.4%، و41% نزلوا 10% أو أكثر. البكرية (2.7 مرة) والقيصرية قبل الطلق (مرتين) زادوا النزول، فهذولي يبيلهم متابعة وزن أدق. اطلبي يوزنونه بزيارة اليوم 3–5 (AAP).</p>
+<div class="vids" data-v="enough"></div>
 <div class="mini" data-lv="enough"></div>
 </section>
 
 <section id="formula">
-<span class="lv">المرحلة 6</span>
-<h2>الحليب الصناعي: متى دوا ومتى «فزعة» ما لها داعي</h2>
-<div class="box ok"><h3>أول شي، وبكل جدية</h3><p>الحليب الصناعي مو شي شين إذا الياهل محتاجه صج، بالعكس ممكن يكون ضروري. الأم اللي دختورها كتب لها مكمل لسبب طبي أم بطلة، ولا أحد له حق يحاسبها. السوالف اللي تحت حق اللي يبي يعطي بطل «احتياط» عشان الياهل «يبين جوعان».</p></div>
-<h3>متى ما يحتاج (من نص بروتوكول ABM)</h3>
-<p>المولود السليم المكتمل ما يحتاج مكمل بس لأن رضاعته ضعيفة أول 24–48 ساعة. الكميات القليلة من اللبأ «طبيعية وفسيولوجية ومناسبة».</p>
+<span class="lv">المرحلة 8</span>
+<h2>إذا ما كفاه: الحليب الصناعي، متى دوا ومتى «فزعة»</h2>
+<div class="box ok"><h3>أول شي، وبكل جدية</h3><p>الصناعي مو شين إذا الياهل محتاجه صج. الأم اللي دختورها كتب لها مكمل لسبب طبي أم بطلة، ولا أحد له حق يحاسبها. الطقطقة اللي تحت حق اللي يبي يعطي بطل «احتياط» بس لأن اللبأ «يبين قليل».</p></div>
+<p>المولود السليم ما يحتاج مكمل بس لأن رضاعته قليلة أول 24–48 ساعة. القرار للدختور بعد الفحص. (ABM)</p>
+<h3>ما يحتاج مكمل إذا:</h3>
 <div class="cards" id="noNeed"></div>
-<h3>متى ممكن يحتاج (بقرار الدختور)</h3>
+<h3>ممكن يحتاج (بقرار الدختور)</h3>
 <table class="stack"><thead><tr><th>من جهة الياهل</th><th>من جهة الأم</th></tr></thead><tbody>
-<tr><td>سكر نازل مثبت بالمختبر وما يتحسن بالرضاعة المتكررة</td><td>نزول الحليب تأخر لليوم 3–5 أو بعده والياهل ما ياخذ كفاية (مثل بقايا مشيمة، متلازمة شيهان، نقص أولي بأنسجة الثدي، وهذا أقل من 5% من الحريم)</td></tr>
-<tr><td>جفاف واضح بالفحص والتحاليل (نزل حوالي 10%، صوديوم عالي، خمول) وما يتحسن بالدعم</td><td>عملية سابقة بالثدي أثرت على الإنتاج</td></tr>
-<tr><td>نزل 8–10% ونزول الحليب تأخر لليوم 5 أو بعده</td><td>ألم ما ينحمل وقت الرضاعة مع إنها حاولت تعالجه</td></tr>
-<tr><td>العقي الأسود مستمر أو البراز متأخر باليوم 5</td><td>الأم بعيدة عن الياهل، أو مريضة وايد، أو تاخذ دوا يمنع الرضاعة</td></tr>
-<tr><td>الحليب موجود بس ما يوصله (مشكلة بالمسكة)، أو صفار مع قلة رضاعة مع إنهم حاولوا يعالجونها</td><td></td></tr>
+<tr><td>سكر نازل مثبت بالتحليل وما يتحسن بالرضاعة</td><td>الإدرار تأخر لليوم 3–5 أو بعده والياهل ما ياخذ كفاية (بقايا مشيمة، متلازمة شيهان، نقص أنسجة الثدي، أقل من 5% من الحريم)</td></tr>
+<tr><td>جفاف واضح (نزل حوالي 10%، صوديوم عالي، خمول)</td><td>عملية سابقة بالثدي</td></tr>
+<tr><td>نزل 8–10% والإدرار تأخر لليوم 5</td><td>ألم ما ينحمل مع إنها حاولت تعالجه</td></tr>
+<tr><td>العقي مستمر أو البراز متأخر باليوم 5</td><td>بعيدة عن الياهل، أو مريضة، أو دوا يمنع الرضاعة</td></tr>
+<tr><td>الحليب موجود بس ما يوصله (مسكة)، أو صفار مع قلة رضاعة ما تحسنت</td><td></td></tr>
 </tbody></table>
-<h3>ليش ما نعطيه صناعي بدون سبب طبي؟</h3>
+<h3>ليش لا بدون سبب؟</h3>
 <ul class="l">
-<li><b>يقلل الحليب نفسه:</b> الصناعي ثقيل وينعطى بكميات أكبر، فيشبع أطول ويرضع من الثدي أقل، فيقل التحفيز ويقل الإنتاج، وبعدين «يبين» إنه يبي مكمل أكثر. هالدوامة أشهر سبب لـ«نشفان الحليب».</li>
-<li><b>يأخر نزول الحليب ويسبب احتقان</b> بسبب قلة الرضعات أول الأيام.</li>
-<li><b>يغير بكتيريا أمعاء الياهل</b> وممكن يعرضه بدري لبروتين حليب البقر، وهذا ممكن يزيد الحساسية (أهم إذا بالعايلة حساسية أو ربو أو إكزيما).</li>
-<li><b>يزيد احتمال الإسهال والالتهابات</b>، خصوصاً إذا تعقيم البطال أو الماي مو زين.</li>
-<li><b>ممكن «يزهد» بالثدي:</b> البطل غير بحركة اللسان والفك وسرعة الحليب.</li>
-<li><b>يهز ثقة الأم</b>، ووايد مرات يكمل بالبيت فتقصر مدة الرضاعة.</li>
-<li><b>الماي أو ماي السكر أسوأ:</b> مرتبط بزيادة الصفار ونزول الوزن، وممكن يسبب تسمم مائي.</li>
+<li><b>يقلل الحليب:</b> الصناعي يشبعه أطول، فيرضع أقل، فالثدي ينتج أقل. هالدوامة أشهر سبب لـ«نشفان الحليب».</li>
+<li><b>يأخر الإدرار</b> ويسبب احتقان.</li>
+<li><b>يغير بكتيريا الأمعاء</b>، ويعرضه بدري لبروتين حليب البقر.</li>
+<li><b>يزيد الإسهال والالتهابات.</b></li>
+<li><b>ممكن يزهد بالثدي</b> لأن البطل أسهل.</li>
+<li><b>يهز ثقة الأم</b> ويقصر مدة الرضاعة.</li>
+<li><b>الماي أو ماي السكر أسوأ:</b> يزيد الصفار ونزول الوزن.</li>
 </ul>
-<p class="joke">يعني «بطل صغير بس عشان ترقدين» مو هدية، هذي قسط أول بقرض طويل.</p>
-<div class="box pink"><h3>إذا لزم المكمل صج: شنو وشلون</h3>
-<p><b>الترتيب:</b> 1) حليب الأم المعصور (العصر باليد ممكن يطلع أكثر من الشفاط أول الأيام) 2) حليب متبرعة مبستر إذا موجود 3) حليب صناعي. الكمية على قد عمره بالأيام (المرحلة 3)، وكملي رضاعة وعصر بعد كل رضعة.</p>
-<p><b>الطريقة:</b> ملعقة أو كوب أو سرنجة أو أنبوب على الثدي، مو الببرونة. الثدي أول دايماً، والأحسن تنزلين الحليب بالسرنجة بزاوية ثمه وهو ماسك ويمص، أو وهو يمص إصبع، ببطء وبس وهو يمص. لا تبخين الحليب بحلجه.</p>
-<p><b>لا توقفينه بروحج</b> إذا الدختور كاتبه لسبب طبي (نزول وزن، صفار، سكر). وإذا انعطى احتياط، اتفقي مع الدختور أو أخصائية الرضاعة على خطة تخففينه تدريجياً.</p></div>
+<p class="joke">يعني «بطل صغير بس عشان ترقدين» مو هدية، هذا قسط أول بقرض طويل. والبطل «احتياط» مثل إنك تمشي على الإطار الاحتياط على طول، وبعدين تستغرب ليش الإطار الأصلي نام.</p>
+<p class="joke">وأشهر تأليف: «حليبج خفيف، شوفي لونه». الحليب مو شاي كرك عشان نحكم عليه من لونه.</p>
+
+<div class="box pink"><h3>إذا لزم المكمل صج</h3>
+<p><b>الترتيب:</b> حليب الأم المعصور، بعدين حليب متبرعة مبستر إذا موجود، بعدين صناعي. الكمية حسب عمره بالأيام (جدول المرحلة 1).</p>
+<p><b>الطريقة:</b> ملعقة أو كوب أو سرنجة أو أنبوب على الثدي، مو الببرونة.</p>
+<p><b>الثدي أول دايماً.</b> وأحسن شي تعطينه بالسرنجة وهو ماسك الثدي: حطي طرفها بزاوية ثمه ونزلي الحليب بس لما يمص. أو أنبوب رفيع جنب الحلمة (SNS) تركبه أخصائية الرضاعة. وبعيد عن الثدي: خليه يمص صبعج ونزلي الحليب جنبه ببطء. لا تبخينه بحلجه.</p>
+<p>كملي عصر بعد الرضعات عشان ما يقل حليبج. ولا توقفينه بروحج إذا الدختور كاتبه لسبب طبي. وإذا كان احتياط، اتفقي على خطة تخففينه تدريجياً.</p></div>
 <div class="mini" data-lv="formula"></div>
 </section>
 
-<section id="paci">
-<span class="lv">المرحلة 7</span>
-<h2>المصاصة: الياهل مو محتاج «كورس» مص</h2>
-<p class="lead">المص شي ينولد فيه الياهل، والثدي نفسه هو التدريب. الأفضل تأجلينها لين تستقر الرضاعة ويرجع لوزن الولادة، <b>عادة 3–4 أسابيع</b>.</p>
+<section id="pump">
+<span class="lv">المرحلة 9</span>
+<h2>العصر والشفاط: مو كل أم تحتاج مكينة</h2>
+<p>إذا الياهل ويا أمه ويرضع زين 8–12 مرة، ما يحتاج شفاط أول الأيام. في دراسة صينية (468 أم بعد القيصرية) الإدرار تأخر عند 33%، وكل رضعة زيادة أول 48 ساعة قللت التأخر. والشفاط بدون حاجة ممكن يسبب احتقان.</p>
+<table class="stack"><thead><tr><th>الحالة</th><th>متى تبدين</th><th>كم مرة</th></tr></thead><tbody>
+<tr><td>الياهل بالعناية المركزة أو بعيد</td><td>خلال أول ساعة إذا تقدرين (يعطي حليب أكثر من البداية بعد 1–6 ساعات)</td><td>8 مرات أو أكثر باليوم، منها مرة بالليل</td></tr>
+<tr><td>معاج بس ما يمسك أو ما يرضع زين</td><td>من اليوم الأول</td><td>بعد كل رضعة مو زينة، وعطيه بالملعقة</td></tr>
+<tr><td>الإدرار تأخر أو بدا مكمل</td><td>مع المكمل</td><td>بعد كل رضعة 10–15 دقيقة</td></tr>
+<tr><td>بعد القيصرية</td><td>إذا تأخرت أول رضعة أو الرضعات قليلة</td><td>رضاعة وايدة أول، والعصر تعويض</td></tr>
+<tr><td>تبين تخزنين حليب</td><td>بعد ما تستقر الرضاعة (3–4 أسابيع)</td><td>مرة باليوم بعد رضعة الصبح</td></tr>
+</tbody></table>
 <ul class="l">
-<li><b>تغطي على علامات الجوع:</b> يسكت شوي فتتأجل الرضعة أو تروح عليه، وأول أسبوعين كل رضعة لها قيمة.</li>
-<li><b>مصها ما يحفز الثدي:</b> كل مصة تروح للمصاصة ما وصلت للثدي.</li>
-<li><b>أول الأيام وقت الوزن والصفار:</b> الرضعات اللي تروح تزيد نزول الوزن وتبطئ طلعة الصفار.</li>
+<li><b>أول يومين العصر باليد أحسن</b>، لأن اللبأ قليل ويضيع بأنابيب الشفاط. جمعيه بملعقة أو سرنجة. من اليوم 3 الشفاط المزدوج أفيد.</li>
+<li><b>أعصر وما يطلع شي؟</b> كملي. الهدف أول يومين ترسلين إشارة للجسم، مو تجمعين كمية.</li>
+<li><b>الجلسة:</b> 10–15 دقيقة، بقمع على مقاسج وشفط ما يعور، ولا تخلين فجوة أطول من 5–6 ساعات بالليل إذا معتمدة على الشفاط.</li>
+<li><b>من السعودية:</b> في تبوك (671 أم) أمهات القيصرية كانوا أقل بوضوح ببداية الرضاعة خلال 48 ساعة.</li>
 </ul>
-<div class="box gold"><h3>للأمانة العلمية</h3><p>مراجعة كوكرين (2016، 1,302 ياهل) لقت إن المصاصة، من الولادة أو بعد ما استقرت الرضاعة، ما غيرت نسبة الرضاعة الخالصة لين 4 شهور. بس الأمهات فيها كانوا متحمسين وايد، والمراجعة تقول إن المعلومات عن أضرارها مو كافية. يعني مو ممنوعة نهائياً، بس التأجيل أضمن، خصوصاً إذا الياهل نعسان أو وزنه نازل أو عنده صفار.</p></div>
-<div class="box ok"><h3>إذا استخدمتيها بدري</h3><p>بعد الرضعة مو بدالها، ورضعيه أول ما تشوفين أي علامة جوع، ولا تحطين عليها عسل أو سكر أبداً. وللتهدئة أول الأيام: الثدي، والحضن جلد بجلد، والقماط، والهزهزة.</p></div>
+<p class="joke">شفاط بـ 200 دينار عشان يطلع 3 قطرات أول يوم؟ يدج ببلاش وتطلع نفس الثلاث قطرات، وأحياناً أكثر.</p>
+<div class="vids" data-v="pump"></div>
+<div class="mini" data-lv="pump"></div>
+</section>
+
+<section id="paci">
+<span class="lv">المرحلة 10</span>
+<h2>المصاصة: الياهل مو محتاج «كورس» مص</h2>
+<p class="lead">أجليها لين تستقر الرضاعة ويرجع لوزن الولادة (<b>عادة 3–4 أسابيع</b>)، لأنها:</p>
+<ul class="l">
+<li>تغطي على علامات الجوع فتروح رضعات.</li>
+<li>ما تحفز الثدي.</li>
+<li>أول الأيام كل رضعة تفرق بالوزن والصفار.</li>
+<li>والمص ما يحتاج تدريب، شي فطري.</li>
+</ul>
+<div class="box gold"><h3>للأمانة العلمية</h3><p>مراجعة كوكرين (2016) ما لقت إن المصاصة غيرت الرضاعة الخالصة لين 4 شهور عند أمهات متحمسات للرضاعة. فهي مو ممنوعة، بس التأجيل أضمن، خصوصاً إذا الياهل نعسان أو وزنه نازل أو مصفر. وإذا استخدمتيها: بعد الرضعة مو بدالها، وبدون عسل أو سكر.</p></div>
+<p class="joke">المصاصة أول أسبوع مثل إنك تعطي واحد جوعان علك وتقول له «تونس فيه لين يجي الغدا».</p>
 <p class="joke">واللي يقول «حطوا له مصاصة يتعود من الحين»، يتعود على شنو بالضبط؟ على إنه يصيح جوعان ويعطونه بلاستيك؟</p>
 <div class="mini" data-lv="paci"></div>
 </section>
 
-<section id="myths">
-<span class="lv">المرحلة 8</span>
-<h2>خرافة ولا حقيقة؟ سوالف الديوانية على المحك</h2>
-<p class="lead">اختاري جوابج وشوفي النتيجة. <span id="mythScore"></span></p>
-<div id="mythList"></div>
-<div class="box pink"><h3>وعن الشفاط والماي والأكل باختصار</h3>
-<ul class="l">
-<li>إذا الياهل ويا أمه ويرضع زين 8–12 مرة، ما يحتاج شفاط أول الأيام. أول يومين العصر باليد غالباً أحسن، والشفاط الكهربائي المزدوج يصير أفيد من اليوم 3.</li>
-<li>إذا الياهل بالعناية المركزة أو بعيد: ابدي تعصرين بأسرع وقت، والأفضل خلال أول ساعة، 8 مرات أو أكثر كل 24 ساعة منها مرة بالليل.</li>
-<li>إذا الرضاعة ماشية وتبين تخزنين: عادة بعد 3–4 أسابيع، مرة باليوم بعد رضعة الصبح.</li>
-<li>ماكو أكل معين «يدر الحليب». اشربي على قد عطشج، كوب مع كل رضعة، وزيدي بحر الصيف (وصيفنا ما يرحم). البول الفاتح علامة إنج شاربة كفاية.</li>
-<li>نفسيتج مهمة: الحزن اللي يطول أكثر من أسبوعين، أو أفكار إنج تأذين نفسج أو الياهل، يبيلها دختور فوراً.</li>
-</ul></div>
+<section id="mom">
+<span class="lv">المرحلة 11</span>
+<h2>الأم: لأن المصنع يحتاج صيانة</h2>
+<div class="cards">
+<button class="flip" aria-expanded="false"><h3>الاحتقان (اليوم 3–5)</h3><div class="ans">الثدي مليان ويعور والهالة تقسى. رضعي وايد، وليني الهالة قبل الرضعة بالضغط العكسي أو عصر شوي، وكمادات باردة بعدها. لا تشفطين كل شي. احمرار مع حرارة وأعراض إنفلونزا يبيله دختور.</div></button>
+<button class="flip" aria-expanded="false"><h3>شنو آكل عشان يدر الحليب؟</h3><div class="ans">ماكو أكل «يدر الحليب». كلي متنوع، وكملي الفيتامينات، واسألي قبل أي دوا أو أعشاب.</div></button>
+<button class="flip" aria-expanded="false"><h3>أشرب ماي وايد؟</h3><div class="ans">الزايد ما يزيد الحليب (كوكرين 2014). اشربي على قد عطشج، وكوب مع كل رضعة، وزيدي بالصيف (وصيفنا ما يرحم). الاحتياج المرجعي حوالي 3.8 لتر باليوم مع الأكل، يعني حوالي 12–13 كوب مشروبات (تقدير). البول الفاتح يعني إنج شاربة كفاية. خففي العصاير المحلاة والكافيين.</div></button>
+<button class="flip" aria-expanded="false"><h3>نفسيتي تأثر على الحليب؟</h3><div class="ans">إي. في الدراسة الصينية، الأمهات اللي عندهم علامات اكتئاب تأخر الإدرار عندهم تقريباً الضعف. النوم ووقفة الأهل جزء من العلاج. الحزن اللي يطول أكثر من أسبوعين أو أفكار إنج تأذين نفسج أو الياهل يبيلها دختور فوراً.</div></button>
+</div>
+<p class="joke">واللي يقول «اشربي حلبة وكمون وماي ورد ونص الجمعية»: ماكو أكل يدر الحليب. المصنع يشتغل بالطلب، مو بالبهارات.</p>
+<div class="mini" data-lv="mom"></div>
 </section>
 
 <section id="red">
-<span class="lv">المرحلة 9</span>
-<h2>متى تخلين السوالف وتكلمين الدختور على طول</h2>
-<div class="box bad"><ul class="l">
-<li>أقل من 6 رضعات في 24 ساعة، أو ياهل ما يقعد للرضاعة أو جسمه رخو.</li>
-<li>حفاظات أقل من الجدول، أو أقل من 6 مبللة بعد اليوم 5، أو بول غامج أو بلورات حمرا بعد اليوم 3.</li>
+<span class="lv">المرحلة 12</span>
+<h2>الصفار، ومتى تخلين السوالف وتروحين الدختور</h2>
+<p><b>الصفار:</b> شائع باليوم 2–5. الرضاعة 8–12 مرة تطلعه مع البراز. لا ماي ولا ماي سكر، ولا تعتمدين على الشمس.</p>
+<div class="box bad"><h3>روحي الدختور على طول إذا:</h3><ul class="l">
+<li>أقل من 6 رضعات باليوم، أو ما يقعد للرضاعة، أو جسمه رخو.</li>
+<li>الحفاظات أقل من الجدول، أو بول غامج أو بلورات حمرا بعد اليوم 3.</li>
 <li>البراز الأسود مستمر بعد اليوم 4–5، أو براز أبيض أو باهت.</li>
-<li>صفار أول 24 ساعة، أو قاعد يزيد أو ينزل للبطن والأطراف.</li>
-<li>نزول أكثر من 10% من الوزن، أو ما رجع لوزن الولادة باليوم 14.</li>
-<li>حرارة 38 أو أكثر (أو برودة مو طبيعية)، صعوبة تنفس، زرقة، أو استفراغ أخضر متكرر.</li>
-<li>علامات جفاف: ثم ناشف، النافوخ غاير، نعاس شديد.</li>
-<li>للأم: حرارة مع احمرار الثدي، أو نزيف شديد، أو أفكار إنها تأذي نفسها.</li>
+<li>صفار أول 24 ساعة، أو قاعد يزيد، أو نزل للبطن والرجول.</li>
+<li>نزل أكثر من 10%، أو ما رجع لوزن الولادة باليوم 14.</li>
+<li>حرارة 38 أو أكثر، أو برودة، أو صعوبة تنفس، أو زرقة، أو استفراغ أخضر.</li>
+<li>جفاف: ثم ناشف، نافوخ غاير، نعاس شديد.</li>
+<li>الأم: حرارة مع احمرار الثدي، نزيف شديد، أو أفكار تأذي نفسها.</li>
 </ul></div>
-<p>ولا تعطينه ماي أو ماي سكر للصفار، ولا تعتمدين على الشمس كعلاج. وفيتامين د بالقطرة اللي يكتبها الدختور (الجرعة الشائعة 400 وحدة باليوم)، وماكو داعي للماي قبل 6 شهور حتى بالحر.</p>
+<p class="joke">وهني تنتهي الطقطقة: هالعلامات ما تنطر رأي الديوانية ولا تصويت القروب.</p>
 <div class="mini" data-lv="red"></div>
+</section>
+
+<section id="after">
+<span class="lv">المرحلة 13</span>
+<h2>بعد الأسبوعين: حياتج الجديدة</h2>
+<ul class="l">
+<li><b>الوزن:</b> يزيد حوالي 150–200 غ بالأسبوع أول الشهور (تقريبي).</li>
+<li><b>الحليب:</b> يستقر حوالي 700–800 مل باليوم بعمر شهر (تقريبي).</li>
+<li><b>طفرات النمو</b> (تقريباً الأسبوع 3 و6 والشهر 3): يبي يرضع أكثر. مو معناه الحليب ناقص، ومو سبب تبدين مكمل.</li>
+<li><b>البراز:</b> بعد 6 أسابيع ممكن يقل وايد، وعادي دام الوزن والبول زينين.</li>
+<li><b>فيتامين د:</b> القطرة اللي يكتبها الدختور (الشائع 400 وحدة باليوم)، مهم بالخليج حتى مع الشمس. ولا ماي قبل 6 شهور حتى بالحر.</li>
+</ul>
+<div class="box gold"><p style="margin:0"><b>الهدف</b> (الصحة العالمية ووزارة الصحة السعودية): رضاعة خالصة 6 شهور، وبعدين مع الأكل لين سنتين أو أكثر. «والوالدات يرضعن أولادهن حولين كاملين» (البقرة: 233).</p></div>
+<p class="joke">طفرة النمو مو «الحليب خف». الياهل بس قاعد يطلب زيادة إنتاج قبل التحديث الجاي.</p>
+<div class="mini" data-lv="after"></div>
+</section>
+
+<section id="myths">
+<h2>بونص: تأليف ولا حقيقة؟ «المؤلفين» على المحك</h2>
+<p>قبل لا تصدقين أي نصيحة، اسألي سؤال واحد: مصدرها دراسة، ولا «وحدة قالت لأختي»؟</p>
+<p class="lead">اختاري جوابج وشوفي النتيجة. <span id="mythScore"></span></p>
+<div id="mythList"></div>
 </section>
 
 <section id="exam">
@@ -297,7 +437,7 @@ footer{padding:28px 0 50px;font-size:14px;color:var(--soft)}
 <p>خلصت دليل الرضاعة وصارت <b>خبيرة رضاعة</b>، ويحق لها تسكت أي أحد يقول «عطوه بطل» بدون سبب طبي، بكل أدب طبعاً.</p>
 <p class="score" id="certScore"></p>
 <label for="nmIn" style="display:block;font-size:14px;margin-top:8px">اكتبي اسمج على الشهادة</label>
-<input id="nmIn" maxlength="30" style="font:16px 'IBM Plex Sans Arabic';padding:10px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);min-height:44px;text-align:center;max-width:260px;width:100%">
+<input id="nmIn" class="txt" maxlength="30" style="text-align:center;max-width:260px">
 <div><button class="primary" id="copyBtn">انسخي رسالة للقروب</button></div>
 <p id="copyMsg" style="font-size:14px"></p>
 </div>
@@ -307,107 +447,139 @@ footer{padding:28px 0 50px;font-size:14px;color:var(--soft)}
 
 <footer><div class="wrap">
 <p><b>تذكير:</b> هالدليل للتثقيف وما يغني عن دختور الأطفال أو أخصائية الرضاعة. أي شك، اسألي.</p>
-<p>المصادر الأساسية: بروتوكول ABM رقم 3، توصيات AAP لزيارة اليوم 3–5، وزارة الصحة السعودية، منظمة الصحة العالمية، مراجعات كوكرين 2014 و2016، ودراسات من اليابان والصين والسعودية والكويت وقطر. الأرقام بعد اليوم 4 في الجدول، وزيادة الوزن الأسبوعية، ومواعيد طفرات النمو، وموعد المصاصة، وجرعة فيتامين د تقريبية.</p>
+<p><b>المصادر:</b> بروتوكول ABM رقم 3، AAP (زيارة اليوم 3–5)، وزارة الصحة السعودية، منظمة الصحة العالمية، كوكرين 2014 و2016، Acta Paediatrica 2013، أداة NEWT، ودراسات من اليابان والصين والسعودية والكويت وقطر. المسكة والوضعيات: Stanford Medicine Newborn Nursery، NHS، UNICEF UK، USDA WIC، La Leche League GB، HSE أيرلندا، Mayo Clinic، Cleveland Clinic، Johns Hopkins.</p>
+<p><b>الصور:</b> Stanford Medicine (د. جين مورتن)، د. جاك نيومن على ويكيميديا كومنز (CC BY-SA 4.0)، David Goodman (CC BY 2.0)، والحلمة الغائرة (ملكية عامة)، والتوأم (CC BY-SA 4.0). الحقوق لأصحابها.</p>
+<p>تقريبي: أرقام اليوم 5 وطالع، وزيادة الوزن الأسبوعية، و700–800 مل بعمر شهر، وطفرات النمو، وجرعة فيتامين د، وموعد المصاصة، وتقسيم الماي. والفيديوهات كلها بالإنجليزي.</p>
 </div></footer>
 
 <script>
 {
 const $=s=>document.querySelector(s);
-const LV=[["normal","الطبيعي"],["why","ليش"],["days","يوم بيوم"],["how","الرضعة"],["enough","مكتفي؟"],["formula","الصناعي"],["paci","المصاصة"],["myths","خرافة؟"],["red","الخطر"]];
-let st={done:{},exam:{},myth:{},name:""};
-try{const s=JSON.parse(localStorage.getItem("bfg1"));if(s)st=Object.assign(st,s)}catch(e){}
-const save=()=>{try{localStorage.setItem("bfg1",JSON.stringify(st))}catch(e){}};
-
-const NORMAL=[
-["ما يطلع إلا قطرات صفرا","هذا اللبأ، وأول يوم الياهل يرضع 2–10 مل بس بالرضعة، وهذا كل اللي يبيه. والياهل الماسك زين يطلع بمصه أكثر من يدج أو الشفاط. دراسة يابانية: المعدل أول 3 ساعات 0.4 مل بس، وظل قليل لين حوالي 30 ساعة وبعدين ارتفع فجأة."],
-["الحليب الوايد ما نزل للحين","ينزل عادة بين اليوم 2 و4، وممكن يتأخر شوي بعد القيصرية أو إذا هذي أول ولادة."],
-["ليلة اليوم الثاني يبي يرضع ورا بعض لساعات","اسمه Cluster feeding، طبيعي ويحفز نزول الحليب، ومو دليل إن الحليب قليل. هذا الياهل قاعد يقدم «طلب توريد» للمصنع، مو يشتكي."],
-["راقد وما يصيح يبي رضعة","شائع وايد أول 24–48 ساعة، كأنه راجع من دوام. الصياح علامة جوع متأخرة، فاعتمدي على الساعة وعلامات الجوع، وقعديه إذا مرت 3 ساعات."],
-["يمص شوي ويرقد","طبيعي خصوصاً أول 2–3 أيام: اللبأ ينزل على راحته والمص يتعبه. المهم 8–12 رضعة والحفاظات والوزن ضمن الجدول، مو طول كل رضعة."],
-["وزنه نزل!","كل المواليد ينزل وزنهم، وأقل وزن يكون باليوم 2–3. أقل من 7% طبيعي، والمعدل عند اللي يرضعون زين 5.5–6.6%. يرجع لوزن الولادة بالمعدل اليوم 8، وأغلبهم بين اليوم 7 و14."],
-["يمص مرة مرتين ويوخر ويبكي","أشهر سبب: الحليب ما نزل للحين. أول دقيقة أو دقيقتين لين يصير الإدرار ينزل قطرات، فيعصب. ممكن بعد غازات أو مسكة سطحية أو تعود على السرنجة أو البطل."],
-["بعد ما تطلع غازاته يرجع يمص","طبيعي. طلع الهوا وفضى له مكان، والمص عند المولود مو بس أكل، يمص عشان يرتاح ويهدى. إذا رجع يمص خليه يرضع."],
-["حليبي خفيف ومزرق","أول الرضعة أبيض خفيف ممكن يميل للأزرق، وآخرها أبيض أثقل وأدسم. هالفرق طبيعي، والحليب الخفيف مو «حليب ضعيف»."],
-["اللبأ لونه برتقالي أو وردي خفيف","يصير أحياناً (شوية دم من تشقق أو احتقان) وما يمنع الرضاعة. اسألي الدختور إذا استمر أكثر من يومين."],
-["الثدي مليان ويعور باليوم 3–5","احتقان. الحل: رضاعة وايدة، عصر باليد شوي يلين الهالة قبل الرضعة، وكمادات باردة بعدها. احمرار يعور مع حرارة وأعراض مثل الإنفلونزا يبيله دختور."],
-["أيام يبي يرضع أكثر من العادة","طفرات نمو، منتشرة تقريباً بالأسبوع 3 و6 والشهر 3. مو معناه الحليب ناقص، ومو سبب تبدين مكمل."],
-["بعد 6 أسابيع قل البراز وايد","عادي عند بعض اليهال اللي يرضعون طبيعي، دامه الوزن والبول زينين."]];
-$("#normalCards").innerHTML=NORMAL.map(c=>`<button class="flip" aria-expanded="false"><h3>${c[0]}</h3><div class="ans">${c[1]}</div></button>`).join("");
-
-const NO=[["ياهل نعسان رضع أقل من 8–12 مرة أول 24–48 ساعة","ونزل أقل من 7% وما عليه علامات مرض. يبيله تقعيد وتحفيز، مو بطل."],["ياهل مصفر شوي بس يرضع زين ويسوي براز كافي","ونزل أقل من 7% (البيليروبين أقل من 18 مغ/دل بعد 72 ساعة)."],["ياهل متضايق بالليل أو يبي يرضع على طول لساعات","هذا يسمونه «ياهل». مو مرض."],["الأم تعبانة أو راقدة","التعب حقيقي وتستاهلين راحة ووقفة أهل، بس هذا مو سبب طبي للمكمل."],["لبأ قليل أول يومين والحفاظات والوزن ضمن المتوقع","هذا بالضبط الطبيعي. وماي السكر «غير مناسب» بكل الأحوال."]];
-$("#noNeed").innerHTML=NO.map(c=>`<button class="flip" aria-expanded="false"><h3>${c[0]}</h3><div class="ans">${c[1]}</div></button>`).join("");
+const LV=[["milk","الحليب"],["when","متى"],["latch","المسكة"],["pos","الوضعيات"],["feeding","يرضع؟"],["full","شبع؟"],["enough","مكتفي؟"],["formula","الصناعي"],["pump","الشفاط"],["paci","المصاصة"],["mom","الأم"],["red","الدختور"],["after","بعد أسبوعين"]];
+let st={done:{},exam:{},myth:{},pic:{},name:""};
+try{const s=JSON.parse(localStorage.getItem("bfg2"));if(s)st=Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem("bfg2",JSON.stringify(st))}catch(e){}};
 document.addEventListener("click",e=>{const f=e.target.closest(".flip");if(f)f.setAttribute("aria-expanded",f.getAttribute("aria-expanded")!=="true")});
 
 const DAYS=[
-["1","أول 24 ساعة","لبأ أصفر أو برتقالي، ثقيل وقليل","2–10","6 مل/كغ: حوالي 17 مل لياهل 2.8 كغ","8 أو أكثر (ممكن يكون نعسان)",1,"عقي أسود لزج، مرة أو أكثر"],
-["2","اليوم 2","لبأ","5–15","25 مل/كغ: حوالي 70 مل (2.8 كغ)","8–12 (وايد مرات ورا بعض بالليل)",2,"عقي أسود مخضر"],
-["3","اليوم 3","بداية الإدرار: يفتح لونه ويكثر","15–30","66 مل/كغ: حوالي 185 مل (2.8 كغ)","8–12",3,"انتقالي أخضر أو بني"],
-["4","اليوم 4","انتقالي كريمي، والثدي أثقل","30–60","106 مل/كغ: حوالي 300 مل (2.8 كغ)","8–12",4,"من الأخضر للأصفر"],
-["5–7","الأيام 5–7","انتقالي أبيض مصفر وغزير","45–75","400–600 مل (تقريبي)","8–12",6,"أصفر حبيبي، 3–4 مرات أو أكثر"],
-["8–14","الأيام 8–14","انتقالي يقرب من الناضج","60–90","500–750 مل (تقريبي)","8–12",6,"أصفر، 3–4 مرات أو مع كل رضعة"]];
+["1","اليوم الأول","لبأ ثقيل وقليل","2–10","6 مل/كغ (حوالي 17–20 مل)","8 أو أكثر",1,"عقي أسود لزج"],
+["2","اليوم الثاني","لبأ","5–15","25 مل/كغ (حوالي 70–80 مل)","8–12، وايد بالليل",2,"عقي أسود مخضر"],
+["3","اليوم الثالث","يبدي الإدرار","15–30","66 مل/كغ (حوالي 185–220 مل)","8–12",3,"أخضر أو بني"],
+["4","اليوم الرابع","انتقالي، والثدي أثقل","30–60","106 مل/كغ (حوالي 300–350 مل)","8–12",4,"من الأخضر للأصفر"],
+["5–7","الأيام 5–7","انتقالي غزير","45–75","400–600 مل","8–12",6,"أصفر حبيبي، 3–4 مرات أو أكثر"],
+["8–14","الأيام 8–14","يقرب من الناضج","60–90","500–750 مل","8–12",6,"أصفر، 3–4 مرات أو أكثر"]];
 let dSel=0;
 const drawDay=()=>{const d=DAYS[dSel];
 $("#dayBtns").innerHTML=DAYS.map((x,i)=>`<button class="chip" aria-pressed="${i===dSel}" data-d="${i}">يوم ${x[0]}</button>`).join("");
 $("#dayCard").innerHTML=`<h3>${d[1]}</h3><div class="big"><bdi dir="ltr">${d[3]}</bdi> <small>مل بالرضعة${dSel>3?" (تقريبي)":""}</small></div>
-<div class="grid2"><div><b>لون الحليب</b>${d[2]}</div><div><b>مجموع اليوم</b>${d[4]}</div><div><b>عدد الرضعات</b>${d[5]}</div><div><b>البراز</b>${d[7]}</div>
-<div style="grid-column:1/-1"><b>الحفاظات المبللة (أقل شي)</b>${d[6]}${dSel>3?" أو أكثر، والبول صافي":""}<div class="diapers" aria-hidden="true">${"<i></i>".repeat(d[6])}</div></div></div>
-${dSel===1?'<p class="joke">إذا ظل على 20 مل باليوم في اليوم الثالث أو الرابع فهذا قليل ولازم تكلمين الدختور.</p>':""}`};
+<div class="grid2"><div><b>الحليب</b>${d[2]}</div><div><b>اليوم كله</b>${d[4]}</div><div><b>الرضعات</b>${d[5]}</div><div><b>البراز</b>${d[7]}</div>
+<div style="grid-column:1/-1"><b>حفاظات مبللة (أقل شي)</b>${d[6]}${dSel>3?" أو أكثر، بول صافي":""}<div class="diapers" aria-hidden="true">${"<i></i>".repeat(d[6])}</div></div></div>`};
 $("#dayBtns").addEventListener("click",e=>{const b=e.target.closest("[data-d]");if(b){dSel=+b.dataset.d;drawDay()}});
 drawDay();
 
-const LATCH=["ثمه مفتوح على الآخر","شفايفه مقلوبة لبرا","ماسك جزء كبير من الهالة (خصوصاً من تحت)","ذقنه لاصق بالثدي","جسمه مقابلج «بطن لبطن»","تسمعين صوت بلع مع مص عميق ومنتظم ووقفات"];
-$("#latch").innerHTML=LATCH.map((t,i)=>`<label><input type="checkbox" id="lt${i}"> <span>${t}</span></label>`).join("")+`<p id="latchMsg" style="font-size:15px"></p>`;
-$("#latch").addEventListener("change",()=>{const n=$("#latch").querySelectorAll("input:checked").length;$("#latchMsg").textContent=n===6?"كلها؟ ما شاء الله، مسكة ولا أحلى.":n?`${n} من 6. كملي تشيكين.`:""});
+const VIDS={
+when:[["https://globalhealthmedia.org/video/early-initiation-of-breastfeeding/","Early Initiation of Breastfeeding","Global Health Media: مواليد يدورون الثدي ويرضعون بروحهم أول ما ينحطون جلد بجلد."],["https://med.stanford.edu/newborns/professional-education/breastfeeding/breastfeeding-in-the-first-hour.html","Breastfeeding in the First Hour","Stanford، د. جين مورتن: الرضاعة وعصر اللبأ أول ساعة."]],
+latch:[["https://globalhealthmedia.org/video/attaching-your-baby-at-the-breast/","Attaching Your Baby at the Breast","Global Health Media: أوضح فيديو قصير للمسكة العميقة خطوة بخطوة."],["https://med.stanford.edu/newborns/professional-education/breastfeeding/a-perfect-latch.html","A Perfect Latch","Stanford، د. جين مورتن: حوالي ربع ساعة، شلون تساعدين الياهل يمسك بإيدج."],["https://commons.wikimedia.org/wiki/File:Good_breastfeeding_latch_and_breast_compression.ogv","Good breastfeeding latch and breast compression","د. جاك نيومن، ويكيميديا: مسكة صح حقيقية من قريب."],["https://www.nhs.uk/baby/breastfeeding-and-bottle-feeding/breastfeeding/positioning-and-attachment/","Positioning and attachment","NHS: الوضعية والمسكة."],["https://www.unicef.org.uk/babyfriendly/baby-friendly-resources/breastfeeding-resources/positioning-and-attachment-video/","Positioning and attachment video","UNICEF UK: الوضعية والمسكة."],["https://globalhealthmedia.org/video/what-to-do-about-nipple-pain/","What To Do About Nipple Pain","Global Health Media: ليش تعور الحلمة وشلون تعالجينها."]],
+feeding:[["https://commons.wikimedia.org/wiki/File:Breast_compression_for_breastfeeding.webm","Breast compression for breastfeeding","د. جاك نيومن، ويكيميديا: شلون تضغطين الثدي لما يوقف البلع عشان يرجع يرضع."]],
+enough:[["https://globalhealthmedia.org/video/not-enough-milk/","Not Enough Milk","Global Health Media: علامات إن الياهل ياخذ كفايته، وشنو تسوين إذا ما ياخذ."]],
+pump:[["https://globalhealthmedia.org/video/how-to-express-breastmilk/","How to Express Breastmilk","Global Health Media: العصر باليد."],["https://med.stanford.edu/newborns/professional-education/breastfeeding/hand-expressing-milk.html","Hand Expression of Breastmilk","Stanford، د. جين مورتن: الفيديو المشهور اللي تستخدمه المستشفيات."],["https://med.stanford.edu/newborns/professional-education/breastfeeding/maximizing-milk-production.html","Maximizing Milk Production with Hands-On Pumping","Stanford: الشفط مع ضغط اليد لزيادة الحليب."],["https://globalhealthmedia.org/video/increasing-your-milk-supply/","Increasing Your Milk Supply","Global Health Media: إذا الحليب قليل والياهل ما يزيد وزنه."]]};
+const play='<svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="var(--gold)"/><path d="M13 10l11 7-11 7z" fill="var(--bg)"/></svg>';
+document.querySelectorAll("[data-v]").forEach(el=>{el.innerHTML=VIDS[el.dataset.v].map(v=>`<a class="vid" href="${v[0]}" target="_blank" rel="noopener">${play}<span><b dir="ltr" style="text-align:right">${v[1]}</b><small>${v[2]} (بالإنجليزي)</small></span></a>`).join("")});
+
+const STEPS=[
+["الخطوة 1: بطنه على بطنج، وخشمه مقابل الحلمة",["جسمه كله يلف عليج، وأذنه وكتفه وخصره على خط واحد. راسه بنفس مستوى جسمه.","إيدج على ظهره وكتوفه وأصابعج حول رقبته. لا تمسكين ورا راسه ولا تدفينه، لأنه يدز راسه لورا ويوخر.","خشمه (مو ثمه) مقابل الحلمة."],"hand-back.jpg","الكف على الظهر والكتوف، والأصابع حول الرقبة، والراس حر. المصدر: Stanford Medicine، د. جين مورتن."],
+["الخطوة 2: امسكي الثدي مثل الساندويتش",["إيدج الثانية تحت الثدي على شكل U، والأصابع بعيدة عن الهالة بحوالي 2.5–5 سم.","اضغطي بشويش لين تصير الهالة بيضاوية بنفس اتجاه شفايفه، مثل الساندويتش قبل لا تعضينه.","لا تمسكين الحلمة بين السبابة والوسطى مثل المقص، لأنها تبعد ثمه عن الهالة.","اللي يساعد يقدر يمسك الثدي من فوق وأصابعه موازية لشفايف الياهل."],"u-hold.jpg","مسكة U: الأصابع بعيدة عن الهالة، والثدي مضغوط شوي. المصدر: Stanford Medicine، د. جين مورتن."],
+["الخطوة 3: لمسي شفته الفوقانية بالحلمة، وانطري",["مرري الحلمة من خشمه لشفته الفوقانية.","انطري لين يفتح ثمه على الآخر مثل التثاوبة، وراسه مايل لورا، ولسانه تحت. إذا ما فتح، عيدي اللمسة."],"gape.jpg","هذي اللحظة اللي تقربينه فيها: الثم مفتوح على الآخر والحلمة مقابل الخشم. المصدر: Stanford Medicine، د. جين مورتن."],
+["الخطوة 4: قربيه بسرعة، والذقن أول شي",["قربي الياهل للثدي، لا تميلين بالثدي عليه.","الذقن والشفة التحتانية يلمسون الثدي أول، بعيد تحت الحلمة، والحلمة تروح لسقف ثمه.","خلي الثدي مضغوط لين يبدي يمص."],"chin-first.jpg","الثدي مضغوط، والذقن لاصق أول. المصدر: Stanford Medicine، د. جين مورتن."],
+["الخطوة 5: تأكدي خلال أول دقيقة",["ذقنه غارق بالثدي، وخشمه حر.","شفايفه مقلوبة لبرا مثل ثم السمكة.","الهالة اللي تبين فوق شفته أكثر من اللي تحت.","خدوده مدورة، مو منفخسة.","ما يعور بعد أول ثواني. العوار اللي يكمل معناه المسكة غلط."],"deep-latch.jpg","صح: الذقن غارق، والخشم بالكاد يلمس، والإيد على الكتوف. المصدر: د. جاك نيومن، ويكيميديا كومنز (CC BY-SA 4.0)."],
+["الخطوة 6: إذا يعور، فكيه وعيدي",["لا تسحبينه وهو ماسك. دخلي صبعج الصغير بزاوية ثمه بين لثاته لين ينفك الشفط.","ارجعي للخطوة 1. عادي تعيدين أكثر من مرة أول الأيام.","بعد الرضعة الحلمة لازم تطلع مدورة. إذا طلعت مفلطحة أو مقروصة مثل راس أحمر الشفايف، المسكة كانت سطحية."],"shallow.jpg","غلط: الثم مو مفتوح واسع والشفايف قريبة من راس الحلمة. المصدر: د. جاك نيومن، ويكيميديا كومنز (CC BY-SA 4.0)."]];
+let sI=0;
+const drawStep=()=>{const s=STEPS[sI];$("#stepper").innerHTML=`<h3>${s[0]}</h3><figure><img src="img/${s[2]}" alt="${s[0]}" loading="lazy"><figcaption>${s[3]}</figcaption></figure><ul class="l">${s[1].map(x=>`<li>${x}</li>`).join("")}</ul>
+<div class="stepnav"><button class="navb" data-s="-1" ${sI?"":"disabled"}>السابقة</button><div class="dots" aria-label="الخطوة ${sI+1} من ${STEPS.length}">${STEPS.map((_,i)=>`<i class="${i===sI?"on":""}"></i>`).join("")}</div><button class="navb go" data-s="1" ${sI<STEPS.length-1?"":"disabled"}>التالية</button></div>`};
+$("#stepper").addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(!b)return;sI=Math.max(0,Math.min(STEPS.length-1,sI+ +b.dataset.s));drawStep();$("#stepper").scrollIntoView({block:"start"})});
+drawStep();
+
+const PICS=[["good-close.jpg",1,"صح: الثم مفتوح بزاوية أكثر من 120 درجة، والشفة التحتانية مغطية جزء كبير من الهالة. (Stanford Medicine)"],["bad-close.jpg",0,"غلط: الزاوية أقل من 90 درجة، والشفة التحتانية تحت الحلمة على طول، يعني يمص الحلمة بس. (Stanford Medicine)"],["deep-latch.jpg",1,"صح: الذقن غارق، والخشم بالكاد يلمس. (د. جاك نيومن، CC BY-SA 4.0)"],["shallow.jpg",0,"غلط: الشفايف قريبة من راس الحلمة. (د. جاك نيومن، CC BY-SA 4.0)"]];
+const drawPics=()=>{$("#pics").innerHTML=PICS.map((p,i)=>{const a=st.pic[i];return `<div class="pic"><img src="img/${p[0]}" alt="صورة مسكة رقم ${i+1}" loading="lazy"><div class="btns"><button data-p="${i}" data-a="1" ${a!==undefined?"disabled":""} style="${a!==undefined&&p[1]===1?"background:var(--okbg);border-color:var(--ok)":""}">صح</button><button data-p="${i}" data-a="0" ${a!==undefined?"disabled":""} style="${a!==undefined&&p[1]===0?"background:var(--badbg);border-color:var(--bad)":""}">غلط</button></div>${a!==undefined?`<div class="ex"><b>${a===p[1]?"عفية عليج.":"لا."}</b> ${p[2]}</div>`:""}</div>`}).join("")};
+$("#pics").addEventListener("click",e=>{const b=e.target.closest("[data-p]");if(!b)return;st.pic[b.dataset.p]=+b.dataset.a;save();drawPics()});
+drawPics();
+
+const NIP=[["البارزة","أشهر شكل، وما تحتاج شي غير المسكة العميقة."],["المسطحة","طلعيها قبل الرضعة بعصر أو شفط شوي، واستخدمي الساندويتش. إذا الثدي محتقن ليني الهالة بالضغط العكسي. ووضعية الكورة تساعد (Mayo Clinic)."],["الغائرة","نفس طرق المسطحة. أداة سحب الحلمة (nipple everter) تنفع بعض الأمهات، لا تستخدمينها قبل الولادة. واقي الحلمة (nipple shield) بإشراف أخصائية رضاعة بس. وإذا وحدة ما قدر يمسكها، يرضع من الثانية واشفطي الغائرة.","inverted.jpg","حلمة غائرة. المصدر: ويكيميديا كومنز (ملكية عامة)."],["الكبيرة","انطريه لين يفتح ثمه على الآخر، ومع الوقت ثمه يكبر."]];
+let nI=0;
+const drawNip=()=>{const n=NIP[nI];$("#nipTabs").innerHTML=NIP.map((x,i)=>`<button class="chip" aria-pressed="${i===nI}" data-n="${i}">${x[0]}</button>`).join("");
+$("#nipCard").innerHTML=`<h3>${n[0]}</h3><p>${n[1]}</p>${n[2]?`<figure><img src="img/${n[2]}" alt="${n[3]}" loading="lazy" style="max-height:260px"><figcaption>${n[3]}</figcaption></figure>`:""}<p style="font-size:15px;margin-bottom:0"><b>انتبهي:</b> إذا الحلمة كانت بارزة وفجأة صارت غائرة (مو من الاحتقان)، كلمي الدختور. (Cleveland Clinic)</p>`};
+$("#nipTabs").addEventListener("click",e=>{const b=e.target.closest("[data-n]");if(b){nI=+b.dataset.n;drawNip()}});
+drawNip();
+
+const POS=[["المهد المتقاطع","الأسهل أول الأيام",["إذا بيرضع من اليمين، إيدج اليسار تسنده من ظهره ورقبته، واليمين تسند الثدي بشكل U.","تتحكمين براسه، فهي زينة إذا المسكة صعبة."]],
+["الاستلقاء","متكية لورا",["متكية نص تمدد مو منسدحة، والياهل على بطنج فوق الثدي. خليه يدور الحلمة بنفسه ولا تجبرينه.","زينة للجلد بجلد، وإذا الحليب ينزل بقوة، وبعد القيصرية."]],
+["الكورة","تحت الإبط",["الياهل على جنبج، ظهره على ذراعج وكفج تسند رقبته، ومخدة تحته.","ممتازة بعد القيصرية، وللثدي الكبير، والحلمة المسطحة، والحليب القوي، والتوأم."],"twins.jpg","أم ترضع توأم، اللي فوق قريب من وضعية الكورة. المصدر: ويكيميديا كومنز (CC BY-SA 4.0)."],
+["المهد","الأشهر",["راسه بثنية كوعج بنفس جهة الثدي. أشهر وضعية، بس تحكمج براسه أقل، فاستخدميها بعد ما تضبط المسكة."]],
+["على الجنب","للّيل",["منسدحين على الجنب بطن لبطن. مريحة بالليل وبعد القيصرية، بس المسكة صعب تشوفينها، فاستخدميها بعد ما تتعودون.","الأمان: خليج صاحية ورجعيه لسريره بعد الرضعة. إذا خايفة ترقدين، حطي منبه كل دقيقتين."]]];
+let pI=0;
+const drawPos=()=>{const p=POS[pI];$("#posTabs").innerHTML=POS.map((x,i)=>`<button class="chip" aria-pressed="${i===pI}" data-q="${i}">${i+1}. ${x[0]}</button>`).join("");
+$("#posCard").innerHTML=`<h3>${p[0]} <small style="font:600 14px 'IBM Plex Sans Arabic';color:var(--soft)">(${p[1]})</small></h3><ul class="l">${p[2].map(x=>`<li>${x}</li>`).join("")}</ul>${p[3]?`<figure><img src="img/${p[3]}" alt="${p[4]}" loading="lazy"><figcaption>${p[4]}</figcaption></figure>`:""}`};
+$("#posTabs").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(b){pI=+b.dataset.q;drawPos()}});
+drawPos();
+
+const NO=[["نعسان ورضع أقل من 8 مرات أول 24–48 ساعة","ونزل أقل من 7%، وما عليه علامات مرض. يبيله تقعيد وتحفيز، مو بطل."],["مصفر شوي بس يرضع زين ويسوي براز","ونزل أقل من 7%."],["يبي يرضع على طول بالليل","هذا يسمونه «ياهل». مو مرض."],["الأم تعبانة","التعب حقيقي وتستاهلين راحة ووقفة أهل، بس هذا مو سبب طبي."],["اللبأ قليل والحفاظات والوزن ضمن الجدول","هذا بالضبط الطبيعي. وماي السكر ممنوع بكل الأحوال."]];
+$("#noNeed").innerHTML=NO.map(c=>`<button class="flip" aria-expanded="false"><h3>${c[0]}</h3><div class="ans">${c[1]}</div></button>`).join("");
 
 const wcalc=()=>{const b=parseFloat($("#bw").value),c=parseFloat($("#cw").value),r=$("#wres");
 if(!(b>=1&&b<=6)){r.textContent="اكتبي وزن الولادة ونطلع لج حد 7% وحد 10%.";return}
 let h=`حد 7%: <b>${(b*.93).toFixed(2)} كغ</b> · حد 10%: <b>${(b*.9).toFixed(2)} كغ</b>`;
 if(c>=1&&c<=6){const p=(b-c)/b*100;let m;
-if(p<=0)m="فوق أو على وزن الولادة. زين.";else if(p<7)m="أقل من 7%: طبيعي.";else if(p<=10)m="7–10%: ممكن يكون طبيعي، بس يبيله تقييم للرضاعة والمسكة وبلغي الدختور.";else m="أكثر من 10%: يبيله تقييم طبي (AAP)، وغالباً خطة عصر ومكمل.";
+if(p<=0)m="فوق أو على وزن الولادة. زين.";else if(p<7)m="أقل من 7%: طبيعي.";else if(p<=10)m="7–10%: يبيله تقييم للرضاعة وتبلغين الدختور.";else m="أكثر من 10%: تقييم طبي (AAP)، وغالباً خطة عصر ومكمل.";
 h+=`<br>نزل <b>${p>0?p.toFixed(1):0}%</b>. ${m}`}
 r.innerHTML=h};
 $("#bw").addEventListener("input",wcalc);$("#cw").addEventListener("input",wcalc);
 
+const WRONG=["لا، جربي مرة ثانية. (ولا تسألين العمة.)","هذا جواب «مؤلف». جربي مرة ثانية.","لا لا، هذا اللي يقولونه بالديوانية. جربي ثاني.","قريبة، بس هذا تأليف. حاولي مرة ثانية."];
 const MINI={
-normal:["الياهل باليوم الأول ما يطلع له إلا قطرات لبأ صفرا. شنو يعني؟",["طبيعي، أول يوم يرضع 2–10 مل بالرضعة","الحليب ما يكفي، لازم بطل","حليبج ضعيف"],0,"صح. اللبأ القليل هو اللي يحتاجه."],
-why:["الثدي ينتج حليب على قد...",["شنو تاكلين","ما ينفضى","كم ماي تشربين"],1,"صح، كل ما رضع أكثر سوى الثدي أكثر."],
-days:["باليوم الرابع، كم الرضعة الوحدة تقريباً؟",["2–10 مل","30–60 مل","120 مل"],1,"صح، 30–60 مل باليوم الرابع."],
-how:["الياهل يصيح ووجهه أحمر. هذي علامة جوع...",["مبكرة","متأخرة، هديه أول وبعدين رضعيه","مو جوع أبد"],1,"صح، الصياح علامة متأخرة."],
+milk:["الياهل باليوم الأول ما يطلع له إلا قطرات لبأ. شنو يعني؟",["طبيعي، أول يوم يرضع 2–10 مل بالرضعة","الحليب ما يكفي، لازم بطل","حليبج ضعيف"],0,"صح. اللبأ القليل هو اللي يحتاجه."],
+when:["الياهل يصيح ووجهه أحمر. هذي علامة جوع...",["مبكرة","متأخرة، هديه أول وبعدين رضعيه","مو جوع أبد"],1,"صح، الصياح علامة متأخرة."],
+latch:["وين تحطين إيدج وأنتِ تقربينه؟",["ورا راسه وتدفينه","على ظهره وكتوفه وأصابعج حول رقبته","ما يحتاج تمسكينه"],1,"صح، وراسه يظل حر."],
+pos:["أي وضعية مو للمولود؟",["المهد المتقاطع","الكورة","القعدة (الكوالا)"],2,"صح، الكوالا للياهل الأكبر اللي يمسك راسه."],
+feeding:["شلون تعرفين إنه قاعد يبلع صج؟",["تسمعين البلع أو تشوفين حركة تحت أذنه وذقنه","إذا الحلمة تعور","إذا يصيح"],0,"صح."],
+full:["إيدين الياهل الشبعان تكون...",["مسكرة قبضة","مفتوحة ومرتخية","فوق راسه"],1,"صح، الجوعان قبضته مسكرة."],
 enough:["أصدق مقياس إنه مكتفي:",["القطرات اللي تعصرينها","إحساسج بالثدي","الحفاظات والوزن"],2,"صح، الحفاظات والوزن."],
-formula:["أي وحدة من هذي سبب طبي محتمل للمكمل؟",["الأم تعبانة","سكر نازل مثبت بالمختبر وما يتحسن بالرضاعة المتكررة","الياهل يبي يرضع على طول بالليل"],1,"صح، والقرار للدختور."],
+formula:["أي وحدة من هذي سبب طبي محتمل للمكمل؟",["الأم تعبانة","سكر نازل مثبت بالتحليل وما يتحسن بالرضاعة","الياهل يبي يرضع على طول بالليل"],1,"صح، والقرار للدختور."],
+pump:["أول يومين، شنو أحسن تطلعين فيه اللبأ؟",["العصر باليد","الشفاط الكهربائي","ولا شي"],0,"صح، اللبأ قليل ويضيع بأنابيب الشفاط."],
 paci:["متى الأفضل تبدين المصاصة؟",["من أول يوم عشان يتعود","بعد ما تستقر الرضاعة، عادة 3–4 أسابيع","أبد ممنوعة"],1,"صح، التأجيل أضمن."],
-red:["حرارة الياهل 38. شنو تسوين؟",["تنطرين لباجر","تكلمين الدختور على طول","تعطينه ماي"],1,"صح، على طول."]};
+mom:["شربتي ماي زيادة عن عطشج. الحليب...",["يزيد وايد","ما يزيد","ينقص"],1,"صح، كوكرين 2014 ما لقت فايدة."],
+red:["حرارة الياهل 38. شنو تسوين؟",["تنطرين لباجر","تروحين الدختور على طول","تعطينه ماي"],1,"صح، على طول."],
+after:["الياهل صار يرضع أكثر بالأسبوع 3. شنو السالفة؟",["الحليب خلص، بطل","غالباً طفرة نمو، كملي رضاعة","لازم مصاصة"],1,"صح، طفرة نمو ومو سبب لمكمل."]};
 const renderMini=()=>{document.querySelectorAll(".mini[data-lv]").forEach(m=>{const k=m.dataset.lv,q=MINI[k],d=st.done[k];
 m.innerHTML=`<div class="q">سؤال المرحلة: ${q[0]}</div><div class="opts">${q[1].map((o,i)=>`<button data-k="${k}" data-i="${i}" ${d?"disabled":""} class="${d&&i===q[2]?"right":""}">${o}</button>`).join("")}</div><div class="fb">${d?q[3]+" المرحلة خلصت.":""}</div>`})};
 document.addEventListener("click",e=>{const b=e.target.closest(".mini[data-lv] .opts button");if(!b||b.disabled)return;const k=b.dataset.k,q=MINI[k];
-if(+b.dataset.i===q[2]){st.done[k]=1;save();renderMini();prog()}else{b.classList.add("wrong");b.disabled=true;b.closest(".mini").querySelector(".fb").textContent="لا، جربي مرة ثانية. (ولا تسألين العمة.)"}});
+if(+b.dataset.i===q[2]){st.done[k]=1;save();renderMini();prog()}else{b.classList.add("wrong");b.disabled=true;b.closest(".mini").querySelector(".fb").textContent=WRONG[Math.random()*WRONG.length|0]}});
 
 const MYTHS=[
-["اللبأ وسخ، كبيه وانطري الحليب الأبيض",0,"خرافة. اللبأ مليان أجسام مضادة وبروتين، ولا ينكب ولا يتبدل بماي أو سكر."],
-["الحليب الخفيف المزرق حليب ضعيف",0,"خرافة. أول الرضعة خفيف وآخرها أدسم، وهالفرق طبيعي."],
-["رضعات صغيرة ووايدة أول الأيام شي طبيعي",1,"حقيقة. المولود مصمم لرضعات صغيرة ومتقاربة."],
-["إذا يرضع ورا بعض ليلة اليوم الثاني يعني حليبج ما يكفي",0,"خرافة. Cluster feeding طبيعي ويحفز نزول الحليب."],
-["اشربي ماي وايد عشان يزيد الحليب",0,"خرافة. مراجعة كوكرين 2014 ما لقت دليل إن الشرب فوق حاجة الجسم يفيد. اشربي على قد عطشج."],
-["ماي السكر يساعد يطلع الصفار",0,"خرافة. مرتبط بزيادة الصفار ونزول الوزن وممكن يسبب تسمم مائي. الرضاعة 8–12 هي اللي تساعد."],
-["المصاصة تدرب الياهل على المص",0,"خرافة. المص شي فطري، والثدي هو التدريب."],
-["الشفاط ضروري لكل أم من أول يوم",0,"خرافة. إذا الياهل يرضع زين ما يحتاجه أول الأيام، والعصر باليد أحسن إذا احتجتي تحفيز."],
+["اللبأ وسخ، كبيه وانطري الحليب الأبيض",0,"تأليف. اللبأ مليان أجسام مضادة، ولا يتبدل بماي أو سكر أو أعشاب."],
+["الحليب الخفيف المزرق حليب ضعيف",0,"تأليف. أول الرضعة خفيف وآخرها أدسم، والخفيف مو «حليب ضعيف»."],
+["رضعات صغيرة ووايدة أول الأيام شي طبيعي",1,"حقيقة. معدته حوالي 20 مل."],
+["إذا يرضع ورا بعض ليلة اليوم الثاني يعني حليبج ما يكفي",0,"تأليف. Cluster feeding طبيعي ويحفز الإدرار."],
+["إذا الحلمة تعور طول الرضعة عادي، تحملي",0,"تأليف. العوار اللي يكمل بعد أول ثواني معناه المسكة غلط. فكيه وعيدي."],
+["شكل الحلمة يحدد كمية الحليب",0,"تأليف. الشكل والحجم ما يأثرون على الكمية، وأغلب اليهال يرضعون مهما كان الشكل."],
+["ماي السكر يطلع الصفار",0,"تأليف. يزيد الصفار ونزول الوزن. الرضاعة 8–12 هي اللي تطلعه مع البراز."],
+["المصاصة تدرب الياهل على المص",0,"تأليف. المص شي فطري."],
 ["كل المواليد ينزل وزنهم أول الأيام",1,"حقيقة. أقل وزن باليوم 2–3، وأقل من 7% طبيعي."],
-["في أكل معين يدر الحليب",0,"خرافة. ماكو أكل معين، المحفز الأساسي إن الثدي ينفضى وايد."]];
+["في أكل معين يدر الحليب",0,"تأليف. ماكو أكل «يدر الحليب»."]];
 const renderMyths=()=>{let c=0,n=0;$("#mythList").innerHTML=MYTHS.map((m,i)=>{const a=st.myth[i];if(a!==undefined){n++;if(a===m[1])c++}
-return `<div class="myth ${a!==undefined?"shown":""}"><div class="s">«${m[0]}»</div><div class="btns"><button data-m="${i}" data-a="0" ${a!==undefined?"disabled":""} style="${a!==undefined&&m[1]===0?"background:var(--badbg);border-color:var(--bad)":""}">خرافة</button><button data-m="${i}" data-a="1" ${a!==undefined?"disabled":""} style="${a!==undefined&&m[1]===1?"background:var(--okbg);border-color:var(--ok)":""}">حقيقة</button></div><div class="ex">${a===m[1]?"جوابج صح. ":"جوابج غلط. "}${m[2]}</div></div>`}).join("");
-$("#mythScore").textContent=n?`نتيجتج: ${c} من ${n}`:"";if(n===MYTHS.length&&!st.done.myths){st.done.myths=1;save();prog()}};
+return `<div class="myth ${a!==undefined?"shown":""}"><div class="s">«${m[0]}»</div><div class="btns"><button data-m="${i}" data-a="0" ${a!==undefined?"disabled":""} style="${a!==undefined&&m[1]===0?"background:var(--badbg);border-color:var(--bad)":""}">تأليف</button><button data-m="${i}" data-a="1" ${a!==undefined?"disabled":""} style="${a!==undefined&&m[1]===1?"background:var(--okbg);border-color:var(--ok)":""}">حقيقة</button></div><div class="ex">${a===m[1]?"جوابج صح. ":"جوابج غلط. "}${m[2]}</div></div>`}).join("");
+$("#mythScore").textContent=n?`نتيجتج: ${c} من ${n}`:""};
 $("#mythList").addEventListener("click",e=>{const b=e.target.closest("[data-m]");if(!b)return;st.myth[b.dataset.m]=+b.dataset.a;save();renderMyths()});
 
 const EX=[
 ["أول يوم، كم يرضع الياهل بالرضعة؟",["2–10 مل","60 مل","120 مل"],0],
 ["كم رضعة على الأقل كل 24 ساعة؟",["4–6","8–12","مرة كل ما يصيح بس"],1],
-["الحليب الوايد ينزل عادة...",["بين اليوم 2 و4","من أول ساعة","بعد أسبوعين"],0],
+["وهو يفتح ثمه للمسكة، شنو يلمس الثدي أول؟",["الخشم","الذقن والشفة التحتانية","الجبهة"],1],
+["الحلمة طلعت مفلطحة بعد الرضعة. شنو معناه؟",["المسكة كانت سطحية","حليبج قليل","طبيعي دايماً"],0],
+["وضعية الكوالا (القعدة) للمولود؟",["إي، أحسن وحدة","لا، للياهل الأكبر اللي يمسك راسه","بس بالليل"],1],
 ["نزل وزنه 6% باليوم الثالث:",["طبيعي","مصيبة، بطل على طول","لازم يرقد بالمستشفى"],0],
 ["كم حفاظة مبللة على الأقل من اليوم الخامس؟",["2","4","6 أو أكثر"],2],
-["يرجع لوزن الولادة بحدود:",["الأسبوعين","يومين","شهرين"],0],
 ["إذا لزم المكمل، أول خيار:",["حليب صناعي","حليب الأم المعصور","ماي سكر"],1],
-["أحسن طريقة لإعطاء المكمل أول الأيام:",["ملعقة أو كوب أو سرنجة","الببرونة","بالمصاصة"],0],
-["ليش المكمل بدون سبب يقلل الحليب؟",["الياهل يرضع من الثدي أقل فيقل التحفيز","الصناعي يسد قنوات الحليب","ما يقلل أبد"],0],
+["ليش المكمل بدون سبب يقلل الحليب؟",["يرضع من الثدي أقل فالثدي ينتج أقل","الصناعي يسد قنوات الحليب","ما يقلل أبد"],0],
 ["الأم اللي دختورها كتب لها مكمل لسبب طبي:",["أم بطلة وماشية صح","فاشلة","لازم توقفه بروحها"],0]];
 const renderExam=()=>{let c=0,n=0;$("#exam1").innerHTML=EX.map((q,i)=>{const a=st.exam[i];if(a!==undefined){n++;if(a===q[2])c++}
 return `<div class="mini" style="border-color:var(--line)"><div class="q">${i+1}. ${q[0]}</div><div class="opts">${q[1].map((o,j)=>`<button data-e="${i}" data-j="${j}" ${a!==undefined?"disabled":""} class="${a!==undefined&&j===q[2]?"right":a===j?"wrong":""}">${o}</button>`).join("")}</div></div>`}).join("");
@@ -417,12 +589,12 @@ $("#exam1").addEventListener("click",e=>{const b=e.target.closest("[data-e]");if
 $("#examEnd").addEventListener("click",e=>{if(e.target.id==="retry"){st.exam={};save();renderExam()}});
 $("#nmIn").value=st.name||"";if(st.name)$("#certName").textContent=st.name;
 $("#nmIn").addEventListener("input",e=>{st.name=e.target.value.trim();$("#certName").textContent=st.name||"الأم البطلة";save()});
-$("#copyBtn").addEventListener("click",async()=>{const t=`خلصت دليل الرضاعة التفاعلي وصرت خبيرة رضاعة (${$("#certScore").textContent}). اللبأ ذهب، والحفاظات هي المقياس، والبطل بس إذا الدختور قال.`;
+$("#copyBtn").addEventListener("click",async()=>{const t=`خلصت دليل الرضاعة التفاعلي وصرت خبيرة رضاعة (${$("#certScore").textContent}). اللبأ ذهب، والمسكة العميقة أهم شي، والحفاظات هي المقياس، والبطل بس إذا الدختور قال. ${location.href.startsWith("http")&&location.hostname.endsWith("github.io")?location.href.split("#")[0]:""}`;
 try{await navigator.clipboard.writeText(t);$("#copyMsg").textContent="انسخت. الصقيها بالقروب."}catch(e){$("#copyMsg").textContent=t}});
-$("#resetBtn").addEventListener("click",()=>{st={done:{},exam:{},myth:{},name:""};save();$("#nmIn").value="";$("#certName").textContent="الأم البطلة";renderMini();renderMyths();renderExam();prog();scrollTo(0,0)});
+$("#resetBtn").addEventListener("click",()=>{st={done:{},exam:{},myth:{},pic:{},name:""};save();$("#nmIn").value="";$("#certName").textContent="الأم البطلة";renderMini();renderMyths();renderExam();drawPics();prog();scrollTo(0,0)});
 
-const prog=()=>{const n=LV.filter(l=>st.done[l[0]]).length;$("#barFill").style.width=n/LV.length*100+"%";$("#barTxt").textContent=`${n} من ${LV.length} مراحل`;
-$("#toc").innerHTML=LV.map((l,i)=>`<a href="#${l[0]}" class="${st.done[l[0]]?"done":""}">${i+1}. ${l[1]}${st.done[l[0]]?" ✓":""}</a>`).join("")+`<a href="#exam">الاختبار</a>`};
+const prog=()=>{const n=LV.filter(l=>st.done[l[0]]).length;$("#barFill").style.width=n/LV.length*100+"%";$("#barTxt").textContent=`${n} من ${LV.length} مرحلة`;
+$("#toc").innerHTML=LV.map((l,i)=>`<a href="#${l[0]}" class="${st.done[l[0]]?"done":""}">${i+1}. ${l[1]}${st.done[l[0]]?" ✓":""}</a>`).join("")+`<a href="#myths">تأليف؟</a><a href="#exam">الاختبار</a>`};
 renderMini();renderMyths();renderExam();prog();
 }
 </script>
