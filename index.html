@@ -91,6 +91,7 @@ button.chip[aria-pressed=true]{background:var(--plum);color:var(--bg);border-col
 button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 figure{margin:12px 0}
 figure img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:#000;border-radius:14px}
+.niprow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}.niprow svg{width:100%;height:auto;display:block}.niprow b{font-size:14px}
 figcaption{font-size:13.5px;color:var(--soft);margin-top:6px;line-height:1.5}
 .step{display:none}.step.on{display:block}
 .stepnav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
@@ -215,9 +216,10 @@ footer{padding:28px 0 50px;font-size:14px;color:var(--soft)}
 <p>ممكن تحتاجينها كل رضعة لمدة 2–4 أيام. لا تسوينها إذا فيه التهاب بالثدي أو خراج أو قنوات مسدودة.</p></div>
 <h3>🔍 أشكال الحلمة</h3>
 <p>شكل الحلمة وحجمها ما يأثرون على كمية الحليب، والياهل يمسك الحلمة والهالة مع بعض، فأغلب اليهال يرضعون مهما كان الشكل. والمسطحة والغائرة غالباً تطلع أكثر مع الرضاعة. (WIC، وزارة الزراعة الأمريكية)</p>
+<figure class="nips"><div class="niprow"><div><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M8 6 Q96 14 96 55 Q96 96 8 104 Z" fill="#f1c9a5"/><path d="M95 40 Q97 55 95 70" stroke="#b8735a" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="95" y="49" width="14" height="12" rx="6" fill="#a8604a"/></svg><b>البارزة</b></div><div><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M8 6 Q96 14 96 55 Q96 96 8 104 Z" fill="#f1c9a5"/><path d="M95 40 Q97 55 95 70" stroke="#b8735a" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="95" y="51" width="4" height="8" rx="2" fill="#a8604a"/></svg><b>المسطحة</b></div><div><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M8 6 Q96 14 96 55 Q96 96 8 104 Z" fill="#f1c9a5"/><path d="M95 40 Q97 55 95 70" stroke="#b8735a" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M99 47 Q86 55 99 63" stroke="#a8604a" stroke-width="5" fill="#f1c9a5" stroke-linecap="round"/></svg><b>الغائرة</b></div><div><svg viewBox="0 0 120 110" aria-hidden="true"><path d="M8 6 Q96 14 96 55 Q96 96 8 104 Z" fill="#f1c9a5"/><path d="M95 40 Q97 55 95 70" stroke="#b8735a" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="95" y="44" width="20" height="22" rx="10" fill="#a8604a"/></svg><b>الكبيرة</b></div></div><figcaption>🎨 رسم توضيحي من الجنب لأشكال الحلمة (مو بمقياس حقيقي). الياهل يمسك الحلمة والهالة مع بعض، فكل الأشكال تقدر ترضع.</figcaption></figure>
 <div class="tabs" id="nipTabs" role="group" aria-label="شكل الحلمة"></div>
 <div class="panel" id="nipCard" aria-live="polite"></div>
-<p style="font-size:14px;color:var(--soft)">رسم الأشكال الثلاثة موجود عند <a href="https://my.clevelandclinic.org/health/body/nipple" target="_blank" rel="noopener">Cleveland Clinic</a>.</p>
+<p style="font-size:14px;color:var(--soft)">وفيه رسم ثاني للأشكال الثلاثة عند <a href="https://my.clevelandclinic.org/health/body/nipple" target="_blank" rel="noopener">Cleveland Clinic</a>.</p>
 <h3>🎬 فيديوهات المسكة</h3>
 <div class="vids" data-v="latch"></div>
 <div class="mini" data-lv="latch"></div>
